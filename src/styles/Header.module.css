@@ -1,0 +1,132 @@
+.header {
+    width: 100%;
+    position: sticky;
+    left: 0%;
+    top: 0%;
+    background-color: #2d394b;
+    padding: 10px 70px 10px 30px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    transition: .4s;
+    overflow: hidden;
+    z-index: 999;
+}
+.header.headerHidden{
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.logo {
+    color: #9cc9f5;
+    font-size: var(--mainFz);
+    line-height: var(--mainLh);
+    margin-right: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.logo:hover {
+    color: var(--whiteColor);
+}
+
+.devices {
+    white-space: nowrap;
+}
+
+.device {
+    background-color: inherit;
+    color: #8a94a4;
+    margin-inline: 6px;
+    font-size: var(--iconSize);
+}
+
+.device:hover {
+    color: var(--whiteColor);
+}
+
+.buttons {
+    margin-left: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.headerBtn {
+    border-radius: 3px;
+    font-size: var(--mainFz);
+    margin-inline: 15px;
+    padding: 11px 30px;
+    white-space: nowrap;
+}
+
+.addToCart {
+    background-color: #31af36;
+    color: var(--whiteColor);
+}
+
+.addToCart:hover {
+    background-color: #258628;
+}
+
+.download {
+    color: #243238;
+}
+
+.download:hover {
+    background-color: rgb(59, 152, 228);
+    color: var(--whiteColor);
+}
+.downloadIcon{
+    display: none;
+}
+
+.hide {
+    position: fixed;
+    top: 0%;
+    right: 10px;
+    margin-top: -5px;
+    border: 1px solid #99a6b999;
+    width: 40px;
+    height: 50px;
+    border-radius: 0 0 3px 3px;
+    font-size: var(--mainLh);
+    background-color: inherit;
+    color: var(--whiteColor);
+}
+.arrow{
+    transition: .4s;
+}
+.rotate{
+    transform: rotateX(180deg);
+}
+
+@media (max-width: 910px) {
+    .addToCart{
+        font-size: 0;
+    }
+    .icon{
+        font-size: 18px;
+    }
+    .desktop{
+        display: none;
+    }
+    .download{
+        font-size: 0;
+    }
+    .downloadIcon{
+        display: block;
+        font-size: 20px;
+        color: #00a3ff;
+    }
+}
+
+@media (max-width: 700px){
+    .devices{
+        display: none;
+    }
+    .download{
+        display: none;
+    }
+}

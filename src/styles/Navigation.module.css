@@ -1,0 +1,117 @@
+.elementWrap {
+    padding: var(--elementWrap);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 160px;
+    height: 55px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    font-size: var(--iconSize);
+}
+
+.functionalButtons {
+    margin-right: 25px;
+}
+
+.functional {
+    padding: 7px;
+    color: #54595F;
+    cursor: pointer;
+}
+
+.cart {
+    font-size: var(--iconSize);
+    color: #54595F;
+    cursor: pointer;
+}
+
+.more {
+    font-size: 40px;
+    background: inherit;
+}
+
+.menu {
+    background-color: #F15A24;
+    width: 100%;
+}
+
+.menu>* {
+    color: var(--whiteColor);
+    transition: all .3s;
+    border: 0;
+}
+
+.closeIcon {
+    color: var(--whiteColor);
+    font-size: var(--midIconSize);
+}
+
+.drawer .menu .link {
+    display: block;
+    font-family: var(--mainFf);
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--whiteColor);
+    background-color: inherit;
+    padding: 10px 20px;
+}
+
+.drawer .menu .ant-menu-item-selected.link * {
+    color: var(--blackColor);
+}
+
+@media(min-width: 900px) {
+    .drawer .menu .link:hover {
+        color: var(--blackColor);
+    }
+
+    .cart:hover {
+        color: #65686b;
+    }
+}
+
+@media (max-width: 1015px) {
+    .logo {
+        width: 130px;
+        height: 45px;
+    }
+
+    .buttons {
+        font-size: 20px;
+    }
+
+    .more {
+        font-size: 20px;
+    }
+
+    .cart {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        width: 125px;
+        height: 40px;
+    }
+
+    .navigation .elementWrap {
+        padding: 20px 5px;
+    }
+}
+
+@media (max-width: 330px) {
+    .navigation .elementWrap {
+        padding-inline: 0px;
+    }
+}
