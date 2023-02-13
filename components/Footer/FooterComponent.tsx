@@ -6,7 +6,7 @@ import { ArrowUpOutlined, FacebookFilled, InstagramOutlined, TwitterOutlined, Yo
 import Link from 'next/link';
 import { ConfigProvider, FloatButton } from 'antd';
 
-const FooterComponent = () => {
+const FooterComponent: React.FC = () => {
     return (
         <>
             <footer className={`wrap ${classes.footer}`}>
@@ -58,4 +58,4 @@ const FooterComponent = () => {
     );
 };
 
-export default FooterComponent;
+export default React.memo(FooterComponent);

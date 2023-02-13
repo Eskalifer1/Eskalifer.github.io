@@ -49,7 +49,7 @@ const RegistrationForm = () => {
                 >
                     <Form.Item
                         name="userName"
-                        label={'Username'}
+                        label={<p style={{ fontWeight: 700 }}>Username</p>}
                         help={formik.touched.userName && formik.errors.userName ? <div className={classes.error}>{formik.errors.userName}</div> : null}
                         validateStatus={formik.touched.userName && formik.errors.userName ? 'error' : 'success'}
                     >
@@ -62,7 +62,7 @@ const RegistrationForm = () => {
                     </Form.Item>
                     <Form.Item
                         name="email"
-                        label={'Email'}
+                        label={<p style={{ fontWeight: 700 }}>Email</p>}
                         help={formik.touched.email && formik.errors.email ? <div className={classes.error}>{formik.errors.email}</div> : null}
                         validateStatus={formik.touched.email && formik.errors.email ? 'error' : 'success'}
                         rules={[{ required: true }]}
@@ -76,7 +76,7 @@ const RegistrationForm = () => {
                     </Form.Item>
                     <Form.Item
                         name="password"
-                        label={'Password'}
+                        label={<p style={{ fontWeight: 700 }}>Password</p>}
                         help={formik.touched.password && formik.errors.password ? <div className={classes.error}>{formik.errors.password}</div> : null}
                         validateStatus={formik.touched.password && formik.errors.password ? 'error' : 'success'}
                         rules={[{ required: true }]}

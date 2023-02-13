@@ -1,6 +1,6 @@
 import { Card } from 'antd';
 import React from 'react';
-
+import Image from 'next/image';
 import classes from '@/styles/Article.module.css'
 import Link from 'next/link';
 

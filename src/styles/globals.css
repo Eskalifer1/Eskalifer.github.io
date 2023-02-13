@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap');
-
 :root {
   --whiteColor: #fff;
   --blackColor: #000;
@@ -49,11 +47,7 @@ button {
   padding: 15px;
 }
 
-.ant-drawer-content-wrapper {
-  width: 320px !important;
-}
-
-.ant-menu-item-selected * {
+/* .ant-menu-item-selected * {
   color: var(--blackColor) !important;
 }
 
@@ -77,7 +71,7 @@ button {
 
 .ant-menu-submenu-active>.ant-menu-submenu-title .Drawer__Item__Link {
   color: var(--blackColor) !important;
-}
+} */
 
 .ant-menu-submenu-arrow::after,
 .ant-menu-submenu-arrow::before {
