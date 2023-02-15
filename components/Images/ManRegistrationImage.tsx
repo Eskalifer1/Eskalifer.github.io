@@ -16,7 +16,8 @@ const ManRegistrationImage = () => {
         className={"object-cover rounded-[10px] md:none"}
         quality={60}
         fill
-        sizes="(max-width: 767px) 0"
+        sizes="(max-width: 767px) 0px,
+       (min-width: 767px) 50vw"
       />
     </div>
   );

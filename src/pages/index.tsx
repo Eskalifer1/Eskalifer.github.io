@@ -34,8 +34,8 @@ export default function Home() {
   );
 
   return (
-    <div style={{backgroundColor: '#D9E6E3'}}>
-      <Navigation />
+    <div style={{ backgroundColor: "#D9E6E3" }}>
+      <Navigation isSearchShow={false} />
       <SearchForm
         setMasOfArticles={setMasOfArticles}
         masofArticles={masofArticles}

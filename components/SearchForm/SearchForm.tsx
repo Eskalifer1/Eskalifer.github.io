@@ -1,4 +1,4 @@
-import { Divider, Form, Input } from "antd";
+import { Form, Input } from "antd";
 import SearchPostScheme from "assets/validatioonScheme/SearchPostScheme";
 import { useFormik } from "formik";
 import React, { useEffect } from "react";
@@ -85,7 +85,6 @@ const SearchForm: React.FC<PropsType> = ({
           </Form.Item>
         </Form>
       </div>
-      <Divider className="my-10 bg-black" />
     </div>
   );
 };

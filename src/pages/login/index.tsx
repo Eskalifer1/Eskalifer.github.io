@@ -8,7 +8,7 @@ import LoginForm from 'components/LoginForm/LoginForm';
 const LoginPage: NextPage = () => {
     return (
         <div style={{backgroundColor: '#D9D6DE'}}>
-            <Navigation />
+            <Navigation isSearchShow={false} />
             <LoginForm />
             <FooterComponent />
         </div>

@@ -6,7 +6,7 @@ import React from 'react';
 const RegistrationPage = () => {
     return (
         <div style={{ backgroundColor: '#E3F6FD' }}>
-            <Navigation />
+            <Navigation isSearchShow={false}/>
             <Registration />
             <FooterComponent />
         </div>

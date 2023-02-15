@@ -7,7 +7,7 @@ import LostPasswordForm from "components/LostPassword/LostPasswordForm";
 const LostPasswordPage: NextPage = () => {
   return (
     <div className="bg-[#D9D6DE]">
-      <Navigation />
+      <Navigation isSearchShow={false} />
       <LostPasswordForm />
       <FooterComponent />
     </div>
