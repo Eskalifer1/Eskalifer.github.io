@@ -1,14 +1,6 @@
-:root {
-  --whiteColor: #fff;
-  --blackColor: #000;
-  --mainFz: 14px;
-  --mainLh: 28px;
-  --iconSize: 28px;
-  --midIconSize: 24px;
-  --elementWrap: 15px;
-  --mainFf: 'Chivo', sans-serif;
-}
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,63 +9,28 @@
 
 html,
 body {
-  max-width: 100vw;
-  min-height: 100vh;
-  overflow-x: hidden;
+  @apply max-w-[100vw] min-h-[100vh];
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-  transition: .3s;
+  @apply text-inherit no-underline duration-300;
 }
 
 ul,
 ol {
-  list-style: none;
+  @apply list-none;
 }
 
 button {
-  border: 0;
-  transition: .3s;
-  cursor: pointer;
+  @apply border-0 duration-300 cursor-pointer;
 }
 
 .wrap {
-  padding: 20px;
+  @apply p-5;
 }
-
-.elementWrap {
-  padding: 15px;
+.ant-menu-item-selected * {
+  @apply text-black !important;
 }
-
-/* .ant-menu-item-selected * {
-  color: var(--blackColor) !important;
-}
-
-.ant-menu-submenu .ant-menu-submenu-title i::before,
-.ant-menu-submenu .ant-menu-submenu-title i::after {
-  background-color: var(--whiteColor);
-}
-
-.ant-menu-submenu {
-  color: var(--whiteColor) !important;
-}
-
-.ant-menu-submenu-active {
-  color: var(--blackColor) !important;
-}
-
-.ant-menu-submenu-active>.ant-menu-submenu-title i::before,
-.ant-menu-submenu-active>.ant-menu-submenu-title i::after {
-  background-color: var(--blackColor) !important;
-}
-
-.ant-menu-submenu-active>.ant-menu-submenu-title .Drawer__Item__Link {
-  color: var(--blackColor) !important;
-} */
-
-.ant-menu-submenu-arrow::after,
-.ant-menu-submenu-arrow::before {
-  transition: all 0s !important;
+.ant-menu-submenu-active > .ant-menu-submenu-title > .ant-menu-title-content > p{
+  @apply text-black !important;
 }
