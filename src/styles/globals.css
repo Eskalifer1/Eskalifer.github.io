@@ -31,6 +31,43 @@ button {
 .ant-menu-item-selected * {
   @apply text-black !important;
 }
-.ant-menu-submenu-active > .ant-menu-submenu-title > .ant-menu-title-content > p{
+.ant-menu-submenu-active
+  > .ant-menu-submenu-title
+  > .ant-menu-title-content
+  > p {
   @apply text-black !important;
+}
+.authors .swiper-button-prev {
+  @apply text-black bg-white rounded-[50%] !w-[27px] !h-[27px];
+}
+
+.heroSwiper .swiper-button-next,
+.heroSwiper .swiper-button-prev {
+  @apply !text-white;
+}
+.heroSwiper .swiper-button-next::after,
+.heroSwiper .swiper-button-prev::after {
+  @apply text-[15px];
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the element */
+.slide-in {
+  animation-name: slide-in;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 2s;
+}
+.slide-in.initial {
+  transform: translateY(100%);
+  opacity: 0;
 }

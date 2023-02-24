@@ -22,36 +22,34 @@ const NavigationSearch = () => {
     validationSchema: SearchPostScheme,
   });
   return (
-    <div>
-      <Form
-        form={form}
-        initialValues={formik.initialValues}
-        onFinish={formik.handleSubmit}
-        layout="vertical"
+    <Form
+      form={form}
+      initialValues={formik.initialValues}
+      onFinish={formik.handleSubmit}
+      layout="vertical"
+    >
+      <Form.Item
+        name="search"
+        help={
+          formik.touched.search && formik.errors.search ? (
+            <div>{formik.errors.search}</div>
+          ) : null
+        }
+        validateStatus={
+          formik.touched.search && formik.errors.search ? "error" : "success"
+        }
+        className={"mb-0"}
       >
-        <Form.Item
-          name="search"
-          help={
-            formik.touched.search && formik.errors.search ? (
-              <div>{formik.errors.search}</div>
-            ) : null
-          }
-          validateStatus={
-            formik.touched.search && formik.errors.search ? "error" : "success"
-          }
-          className={"mb-0"}
-        >
-          <Input
-            placeholder="Search..."
-            onChange={(value) => {
-              formik.setFieldValue("search", value.target.value);
-            }}
-            value={formik.values.search}
-            onBlur={formik.handleBlur}
-          />
-        </Form.Item>
-      </Form>
-    </div>
+        <Input
+          placeholder="Search..."
+          onChange={(value) => {
+            formik.setFieldValue("search", value.target.value);
+          }}
+          value={formik.values.search}
+          onBlur={formik.handleBlur}
+        />
+      </Form.Item>
+    </Form>
   );
 };
 

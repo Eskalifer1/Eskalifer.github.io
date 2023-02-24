@@ -1,4 +1,7 @@
 import "@/styles/globals.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade"
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { QueryClient, QueryClientProvider } from "react-query";

@@ -4,11 +4,7 @@ import loginImage from "../../assets/images/loginPhoto.png";
 
 const BooksImage = () => {
   return (
-    <div
-      className={
-        "h-[600px] relative m-4 basis-1/2 md:basis-0 md:m-0 lg:h-[500px]"
-      }
-    >
+    <div className="h-[600px] relative m-4 basis-1/2 md:basis-0 md:m-0 lg:h-[500px]">
       <Image
         src={loginImage}
         alt="login Image"

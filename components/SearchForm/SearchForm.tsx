@@ -3,21 +3,18 @@ import SearchPostScheme from "assets/validatioonScheme/SearchPostScheme";
 import { useFormik } from "formik";
 import React, { useEffect } from "react";
 import { SearchOutlined } from "@ant-design/icons";
-import { articles } from "@/pages";
 import { ArticleType } from "types/ArticleType";
-import { filterArticles } from "helpers/filterArticles";
+import { articles, filterArticles } from "helpers/filterArticles";
 
 type PropsType = {
   setMasOfArticles: (mas: ArticleType[]) => void;
-  masofArticles: ArticleType[] | undefined;
 };
 type FormProps = {
   search: string;
 };
 
 const SearchForm: React.FC<PropsType> = ({
-  setMasOfArticles,
-  masofArticles,
+  setMasOfArticles
 }) => {
   const onSubmitFunction = (values: FormProps) => {
     console.log(values);

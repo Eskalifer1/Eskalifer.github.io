@@ -20,6 +20,7 @@ const Articles: React.FC<PropsType> = ({ masofArticles }) => {
               description={item.description}
               title={item.title}
               key={index}
+              bg="#fff"
             />
           ))}
       </div>
