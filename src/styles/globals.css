@@ -61,13 +61,14 @@ button {
 }
 
 /* Apply the animation to the element */
-.slide-in {
+.heroSwiper .swiper-slide-active .slide-in {
   animation-name: slide-in;
   animation-duration: 2s;
   animation-timing-function: ease-out;
-  animation-delay: 2s;
+}
+/* .slide-in {
 }
 .slide-in.initial {
   transform: translateY(100%);
   opacity: 0;
-}
+} */

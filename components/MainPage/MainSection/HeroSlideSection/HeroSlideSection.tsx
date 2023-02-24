@@ -27,14 +27,6 @@ const HeroSlideSection: React.FC<PropsType> = ({ array }) => {
         {...swiperParams}
         className="mb-4 heroSwiper"
         effect="fade"
-        onSlideChange={() => {
-          //@ts-ignore
-          document.querySelector(".slide-in").classList.remove("initial");
-        }}
-        onSlideChangeTransitionEnd={() => {
-          //@ts-ignore
-          document.querySelector(".slide-in").classList.add("initial");
-        }}
       >
         {array.map((item, index) => (
           <SwiperSlide key={index}>
