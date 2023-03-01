@@ -9,8 +9,8 @@ type PropsType = {
 const BlogSection:React.FC<PropsType> = ({array}) => {
   return (
     <>
-      <div className="flex p-4 justify-between">
-        <h2 className="font-[Chivo] text-[31px] font-bold minmd:basis-1/2">
+      <div className="flex p-4 justify-between items-center">
+        <h2 className="font-[Chivo] text-[31px] font-bold minmd:basis-1/2 sm:text-[19px]">
           Blog
         </h2>
         <div className="minmd:basis-1/2 text-end">

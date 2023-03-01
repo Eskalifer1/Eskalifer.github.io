@@ -13,7 +13,7 @@ export function withTitle<P extends object>(
   }) => {
     return (
       <>
-      <h2 className="font-[Chivo] text-[25px] font-bold pl-4 mb-2">{titleHead}</h2>
+      <h2 className="font-[Chivo] text-[25px] font-bold pl-4 mb-2 sm:text-lg">{titleHead}</h2>
         <Component {...(props as P)} />
       </>
     );

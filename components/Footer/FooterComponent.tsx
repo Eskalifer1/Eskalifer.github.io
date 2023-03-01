@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "@/styles/Footer.module.css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import payment from "../../assets/images/payment.png";
 import {
   ArrowUpOutlined,

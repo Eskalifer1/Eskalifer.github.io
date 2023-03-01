@@ -26,7 +26,7 @@ button {
 }
 
 .wrap {
-  @apply p-5;
+  @apply p-[15px];
 }
 .ant-menu-item-selected * {
   @apply text-black !important;

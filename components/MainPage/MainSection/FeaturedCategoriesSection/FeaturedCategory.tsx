@@ -15,8 +15,9 @@ const FeaturedCategory: React.FC<PropsType> = ({ img, title }) => {
           <Image
             src={img}
             alt={"Featured Category"}
+            className="rounded-md mx-auto"
             fill
-            className="rounded-md"
+            sizes="100vw"
           />
         </Link>
       </div>

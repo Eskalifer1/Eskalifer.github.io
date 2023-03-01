@@ -1,4 +1,4 @@
-import { Button, Rate } from "antd";
+import { Rate } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

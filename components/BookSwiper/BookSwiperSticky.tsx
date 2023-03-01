@@ -30,7 +30,7 @@ const BooksSwiperSticky: React.FC<PropsType> = ({
     <div className="sticky top-0">
       <Swiper
         {...swiperParams}
-        className="mb-4"
+        className="mb-4 h-full"
         breakpoints={{
           1024: { slidesPerView: slidesCount },
           768: { slidesPerView: 4 },

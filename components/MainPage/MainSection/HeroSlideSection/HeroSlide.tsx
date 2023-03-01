@@ -26,7 +26,7 @@ const HeroSlide: React.FC<HeroSwiperType> = ({
     
   return (
     <div className={`${titleDivClass} relative h-[560px] p-[50px] flex sm:p-8`}>
-      <Image 
+      <Image
         fill
         src={img}
         alt={"Featured Category"}
