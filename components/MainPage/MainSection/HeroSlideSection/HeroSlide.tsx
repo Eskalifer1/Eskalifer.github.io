@@ -16,16 +16,9 @@ const HeroSlide: React.FC<HeroSwiperType> = ({
     : position === "right"
     ? (titleDivClass = "justify-end items-end text-end") 
     : (titleDivClass = "justify-start items-start");
-
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-      setIsVisible(true);
-    }, []);
-
     
   return (
-    <div className={`${titleDivClass} relative h-[560px] p-[50px] flex sm:p-8`}>
+    <div className={`${titleDivClass} relative w-full h-[560px] p-[50px] flex sm:p-8`}>
       <Image
         fill
         src={img}
@@ -35,7 +28,7 @@ const HeroSlide: React.FC<HeroSwiperType> = ({
         sizes="(min-width: 1023px) 100vw,
                     (max-width: 1023px) 75vw"
       />
-      <div className={`font-[Chivo] text-white absolute slide-in ${isVisible ? '' : ' initial'}`}>
+      <div className="font-[Chivo] text-white absolute slide-in">
         <h2 className="font-bold text-[35px] mb-5 sm:text-[23px]">{title}</h2>
         <h3 className="text-[17px] sm:text-3">{subTitle}</h3>
       </div>

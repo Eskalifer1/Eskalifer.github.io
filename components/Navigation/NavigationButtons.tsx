@@ -22,8 +22,8 @@ const NavigationButtons: React.FC<PropsType> = ({ showDrawer }) => {
         <Link href={"/login"}>
           <LoginOutlined className="p-2 text-54595F cursor-pointer" />
         </Link>
-        <Link href={"/#"} className="flex">
-          <Badge count={0} showZero>
+        <Link href={"/#"} className="block w-[30px] h-5">
+          <Badge count={1} className="w-[30px] h-5 flex items-center">
             <ShoppingCartOutlined
               className={
                 "text-3xl text-54595F cursor-pointer minmd:hover:text-[#65686b] lg:text-2xl -mt-1"

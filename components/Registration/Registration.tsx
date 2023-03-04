@@ -1,6 +1,9 @@
+import dynamic from "next/dynamic";
 import React from "react";
 import RegistrationForm from "./RegistrationForm";
-import ManRegistrationImage from "components/Images/ManRegistrationImage";
+const ManRegistrationImage = dynamic(
+  () => import("components/Images/BooksImage")
+);
 
 const Registration = () => {
   return (

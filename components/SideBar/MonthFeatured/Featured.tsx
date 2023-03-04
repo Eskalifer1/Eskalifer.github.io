@@ -23,6 +23,9 @@ const Featured: React.FC<PropsType> = ({
           alt="Feature"
           fill
           className="object-cover rounded-[10px]"
+          sizes="(max-width: 768px) 95vw,
+              (max-width: 1024px) 33vw,
+              12vw"
         />
       </div>
       <div className="font-[Chivo] p-[10px] lg:pt-6 w-3/5 md:w-3/5">

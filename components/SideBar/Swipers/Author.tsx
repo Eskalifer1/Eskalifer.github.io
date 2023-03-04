@@ -23,6 +23,8 @@ const Author: React.FC<PropsType> = ({ img, name }) => {
             alt="Author"
             fill
             className="object-cover rounded-[10px]"
+            sizes="(max-width: 1024px) 33vw,
+              15vw"
           />
         </div>
         <p className="font-bold">{name}</p>

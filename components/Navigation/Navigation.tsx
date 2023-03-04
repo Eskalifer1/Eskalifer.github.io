@@ -23,7 +23,7 @@ const Navigation: React.FC<PropsType> = ({ isSearchShow }) => {
   };
   return (
     <>
-      <div className={"flex items-center justify-between wrap"}>
+      <div className={"flex items-center justify-between wrap h-[120px]"}>
         <OpusLogo />
         {isSearchShow ? (
           <div className="md:hidden m-4 basis-1/3">

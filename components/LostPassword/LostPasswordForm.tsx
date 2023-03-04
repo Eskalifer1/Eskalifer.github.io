@@ -1,6 +1,8 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
-import BooksImage from 'components/Images/BooksImage';
 import FormComponent from './Form';
+
+const BooksImage = dynamic(() => import('components/Images/BooksImage'))
 
 const LostPasswordForm = () => {
     return (

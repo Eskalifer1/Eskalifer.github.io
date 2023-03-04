@@ -17,11 +17,14 @@ const FeaturedCategory: React.FC<PropsType> = ({ img, title }) => {
             alt={"Featured Category"}
             className="rounded-md mx-auto"
             fill
-            sizes="100vw"
+            sizes="(max-width: 768px) 45vw,
+              (max-width: 1024px) 22vw,
+              (max-width: 1224px) 16vw,
+              12vw"
           />
         </Link>
       </div>
-        <h3 className="text-base font-bold">{title}</h3>
+      <h3 className="text-base font-bold">{title}</h3>
     </div>
   );
 };
