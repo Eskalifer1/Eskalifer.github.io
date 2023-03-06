@@ -1,3 +1,4 @@
+import Article from "components/Articles/Article";
 import dynamic from "next/dynamic";
 import React from "react";
 import { Autoplay, Navigation } from "swiper";
@@ -11,7 +12,6 @@ const SlidePrevButton = dynamic(
   () => import("components/Common/SlidePrevButton")
 );
 const SpaceInner = dynamic(() => import("components/Common/SpaceInner"));
-const Article = dynamic(() => import("components/Articles/Article"));
 
 type PropsType = {
   array: ArticleType[];
@@ -20,7 +20,7 @@ type PropsType = {
 
 const BlogSwiper: React.FC<PropsType> = ({ array, slidesCount }) => {
   const swiperParams = {
-    autoplay: {
+    autoplay: { 
       delay: 3000,
       disableOnInteraction: false,
     },
