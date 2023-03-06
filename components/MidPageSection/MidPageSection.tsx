@@ -1,14 +1,16 @@
-import BooksSwiperSticky from "components/BookSwiper/BookSwiperSticky";
-import SpaceInner from "components/Common/SpaceInner";
 import { withTitle } from "components/HOC/withTitle";
 import {
   articles,
   newBooksArray,
   WeekAuthorArray,
 } from "helpers/filterArticles";
+import dynamic from "next/dynamic";
 import React from "react";
-import BlogSection from "./BlogSection/BlogSection";
-import WeekAuthor from "./WeekAuthor/WeekAuthor";
+
+const WeekAuthor = dynamic(() => import("./WeekAuthor/WeekAuthor"));
+const BooksSwiperSticky = dynamic(() => import("components/BookSwiper/BookSwiperSticky"));
+const SpaceInner = dynamic(() => import("components/Common/SpaceInner"));
+const BlogSection = dynamic(() => import("./BlogSection/BlogSection"));
 
 const MidPageSection = () => {
   const BooksSwiperStickywithTitle = withTitle(BooksSwiperSticky);

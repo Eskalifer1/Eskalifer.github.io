@@ -1,11 +1,17 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper";
-import SlideNextButton from "components/Common/SlideNextButton";
-import SlidePrevButton from "components/Common/SlidePrevButton";
 import { BookType } from "types/swipersTypes";
 import BookSlide from "./BookSlide";
-import SpaceInner from "components/Common/SpaceInner";
+import dynamic from "next/dynamic";
+
+const SlideNextButton = dynamic(
+  () => import("components/Common/SlideNextButton")
+);
+const SlidePrevButton = dynamic(
+  () => import("components/Common/SlidePrevButton")
+);
+const SpaceInner = dynamic(() => import("components/Common/SpaceInner"));
 
 type PropsType = {
   array: BookType[];

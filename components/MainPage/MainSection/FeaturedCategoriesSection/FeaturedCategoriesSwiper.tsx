@@ -1,10 +1,16 @@
-import SlideNextButton from "components/Common/SlideNextButton";
-import SlidePrevButton from "components/Common/SlidePrevButton";
+import dynamic from "next/dynamic";
 import React from "react";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FeaturedCategoriesType } from "types/swipersTypes";
 import FeaturedCategory from "./FeaturedCategory";
+
+const SlideNextButton = dynamic(
+  () => import("components/Common/SlideNextButton")
+);
+const SlidePrevButton = dynamic(
+  () => import("components/Common/SlidePrevButton")
+);
 
 type PropsType = {
   slidesCount: number;

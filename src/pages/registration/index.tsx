@@ -1,8 +1,10 @@
-import FooterComponent from "components/Footer/FooterComponent";
 import Navigation from "components/Navigation/Navigation";
 import Registration from "components/Registration/Registration";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import React from "react";
+
+const FooterComponent = dynamic(() => import("components/Footer/FooterComponent"));
 
 const RegistrationPage = () => {
   return (

@@ -1,9 +1,11 @@
 import { NextPage } from "next";
 import React from "react";
 import Navigation from "components/Navigation/Navigation";
-import FooterComponent from "components/Footer/FooterComponent";
 import LostPasswordForm from "components/LostPassword/LostPasswordForm";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
+const FooterComponent = dynamic(() => import("components/Footer/FooterComponent"));
 
 const LostPasswordPage: NextPage = () => {
   return (

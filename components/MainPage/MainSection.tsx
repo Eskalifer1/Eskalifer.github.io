@@ -1,14 +1,19 @@
-import BooksSwiper from "components/BookSwiper/BooksSwiper";
 import { withTitle } from "components/HOC/withTitle";
 import {
   featuredCategories,
   HeroSwiper,
   newBooksArray,
 } from "helpers/filterArticles";
+import dynamic from "next/dynamic";
 import React from "react";
-import FeaturedCategoriesSwiper from "./MainSection/FeaturedCategoriesSection/FeaturedCategoriesSwiper";
-import HeroSlideSection from "./MainSection/HeroSlideSection/HeroSlideSection";
-
+const BooksSwiper = dynamic(() => import("components/BookSwiper/BooksSwiper"));
+const FeaturedCategoriesSwiper = dynamic(
+  () =>
+    import("./MainSection/FeaturedCategoriesSection/FeaturedCategoriesSwiper")
+);
+const HeroSlideSection = dynamic(
+  () => import("./MainSection/HeroSlideSection/HeroSlideSection")
+);
 const MainSection: React.FC = () => {
   const BookSwiperWithTitle = withTitle(BooksSwiper);
   const FeaturedCategorieswithTitle = withTitle(FeaturedCategoriesSwiper);

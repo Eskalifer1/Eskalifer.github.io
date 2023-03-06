@@ -1,11 +1,17 @@
-import Article from "components/Articles/Article";
-import SlideNextButton from "components/Common/SlideNextButton";
-import SlidePrevButton from "components/Common/SlidePrevButton";
-import SpaceInner from "components/Common/SpaceInner";
+import dynamic from "next/dynamic";
 import React from "react";
 import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ArticleType } from "types/ArticleType";
+
+const SlideNextButton = dynamic(
+  () => import("components/Common/SlideNextButton")
+);
+const SlidePrevButton = dynamic(
+  () => import("components/Common/SlidePrevButton")
+);
+const SpaceInner = dynamic(() => import("components/Common/SpaceInner"));
+const Article = dynamic(() => import("components/Articles/Article"));
 
 type PropsType = {
   array: ArticleType[];

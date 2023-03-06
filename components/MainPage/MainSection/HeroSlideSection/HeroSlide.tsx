@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { HeroSwiperType } from "types/swipersTypes";
 
 const HeroSlide: React.FC<HeroSwiperType> = ({
@@ -25,8 +25,8 @@ const HeroSlide: React.FC<HeroSwiperType> = ({
         alt={"Featured Category"}
         className="rounded-[10px] object-cover"
         priority
-        sizes="(min-width: 1023px) 100vw,
-                    (max-width: 1023px) 75vw"
+        sizes="(min-width: 1023px) 75vw,
+                    (max-width: 1023px) 100vw"
       />
       <div className="font-[Chivo] text-white absolute slide-in">
         <h2 className="font-bold text-[35px] mb-5 sm:text-[23px]">{title}</h2>

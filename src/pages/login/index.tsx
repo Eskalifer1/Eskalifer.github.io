@@ -1,10 +1,11 @@
 import { NextPage } from "next";
 import React from "react";
-
 import Navigation from "components/Navigation/Navigation";
-import FooterComponent from "components/Footer/FooterComponent";
 import LoginForm from "components/LoginForm/LoginForm";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
+const FooterComponent = dynamic(() => import("components/Footer/FooterComponent"));
 
 const LoginPage: NextPage = () => {
   return (
