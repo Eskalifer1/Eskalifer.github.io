@@ -3,7 +3,7 @@ import React from 'react';
 import FormComponent from './Form';
 import loginImage from "../../assets/images/loginPhoto.png";
 
-const HalfPageImage = dynamic(() => import('components/Images/halfPageImage'))
+const HalfPageImage = dynamic(() => import('components/Images/HalfPageImage'))
 
 const LostPasswordForm = () => {
     return (

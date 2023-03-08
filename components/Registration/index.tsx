@@ -3,7 +3,7 @@ import React from "react";
 import RegistrationForm from "./RegistrationForm";
 import registrationImage from "./../../assets/images/registration.jpg"
 
-const HalfPageImage = dynamic(() => import('components/Images/halfPageImage'))
+const HalfPageImage = dynamic(() => import('components/Images/HalfPageImage'))
 
 const Registration = () => {
   return (
