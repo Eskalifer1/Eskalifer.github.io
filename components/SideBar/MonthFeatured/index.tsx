@@ -11,10 +11,7 @@ const MonthFeatured: React.FC = () => {
         <h2 className="font-bold text-2xl">Month`s Featured</h2>
         {MonthFeaturedArray.map((item) => (
           <Featured
-            img={item.img}
-            description={item.description}
-            title={item.title}
-            subTitle={item.subTitle}
+            {...item}
             key={item.img}
           />
         ))}

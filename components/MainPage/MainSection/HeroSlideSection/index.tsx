@@ -1,9 +1,13 @@
-import SpaceInner from "components/Common/SpaceInner";
+import dynamic from "next/dynamic";
 import React from "react";
 import { Autoplay, Navigation, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { HeroSwiperType } from "types/swipersTypes";
 import HeroSlide from "./HeroSlide";
+
+const SpaceInner = dynamic(
+  () => import("components/Common/SpaceInner")
+);
 
 type PropsType = {
   array: HeroSwiperType[];
@@ -31,10 +35,7 @@ const HeroSlideSection: React.FC<PropsType> = ({ array }) => {
         {array.map((item, index) => (
           <SwiperSlide key={index}>
             <HeroSlide
-              img={item.img}
-              title={item.title}
-              subTitle={item.subTitle}
-              position={item.position}
+              {...item}
             />
           </SwiperSlide>
         ))}

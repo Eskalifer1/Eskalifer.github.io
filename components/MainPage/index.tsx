@@ -1,4 +1,4 @@
-import SideBar from "components/SideBar/SideBar";
+import SideBar from "components/SideBar";
 import React from "react";
 import MainSection from "./MainSection";
 

@@ -1,10 +1,10 @@
-import Navigation from "components/Navigation/Navigation";
-import Registration from "components/Registration/Registration";
+import HeaderComponent from "Layout/HeaderComponent";
+import Registration from "components/Registration";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import React from "react";
 
-const FooterComponent = dynamic(() => import("components/Footer/FooterComponent"));
+const FooterComponent = dynamic(() => import("Layout/FooterComponent"));
 
 const RegistrationPage = () => {
   return (
@@ -22,7 +22,7 @@ const RegistrationPage = () => {
         <meta name="twitter:image" content="/path/to/image.jpg" />
       </Head>
       <div style={{ backgroundColor: "#E3F6FD" }}>
-        <Navigation isSearchShow={false} />
+        <HeaderComponent isSearchShow={false} />
         <Registration />
         <FooterComponent />
       </div>

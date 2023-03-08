@@ -1,13 +1,17 @@
 import React from "react";
-import Image from "next/image";
-import loginImage from "../../assets/images/loginPhoto.png";
+import Image, { StaticImageData } from "next/image";
 
-const BooksImage = () => {
+type PropsType = {
+  source: StaticImageData;
+  alt: string;
+};
+
+const HalfPageImage: React.FC<PropsType> = ({ source = "", alt = "" }) => {
   return (
     <div className="h-[600px] w-full relative m-4 basis-1/2 md:basis-0 md:m-0 lg:h-[500px]">
       <Image
-        src={loginImage}
-        alt="login Image"
+        src={source}
+        alt={alt}
         priority
         className="object-cover rounded-[10px] md:none"
         quality={60}
@@ -19,4 +23,4 @@ const BooksImage = () => {
   );
 };
 
-export default BooksImage;
+export default HalfPageImage;

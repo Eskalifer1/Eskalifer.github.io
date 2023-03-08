@@ -4,16 +4,16 @@ import { useState } from "react";
 import { ArticleType } from "types/ArticleType";
 import { articles } from "helpers/filterArticles";
 import Head from "next/head";
+import HeaderComponent from "Layout/HeaderComponent";
 
-const SearchForm = dynamic(() => import("components/SearchForm/SearchForm"));
-const Navigation = dynamic(() => import("components/Navigation/Navigation"));
+const SearchForm = dynamic(() => import("components/SearchForm"));
 const FooterComponent = dynamic(
-  () => import("components/Footer/FooterComponent")
+  () => import("Layout/FooterComponent")
 );
-const Articles = dynamic(() => import("components/Articles/Articles"));
+const Articles = dynamic(() => import("components/Articles"));
 
 export default function BlogPage() {
-  const [masofArticles, setMasOfArticles] = useState<ArticleType[] | undefined>(
+  const [articlesArray, setArticlesArray] = useState<ArticleType[] | undefined>(
     articles
   );
   return (
@@ -31,9 +31,9 @@ export default function BlogPage() {
         <meta name="twitter:image" content="/path/to/image.jpg" />
       </Head>
       <div style={{ backgroundColor: "#D9E6E3" }}>
-        <Navigation isSearchShow={false} />
-        <SearchForm setMasOfArticles={setMasOfArticles} />
-        <Articles masofArticles={masofArticles} />
+        <HeaderComponent isSearchShow={false} />
+        <SearchForm setArticlesArray={setArticlesArray} />
+        <Articles articlesArray={articlesArray} />
         <FooterComponent />
       </div>
     </>

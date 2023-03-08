@@ -6,10 +6,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { ArticleType } from "types/ArticleType";
 
 const SlideNextButton = dynamic(
-  () => import("components/Common/SlideNextButton")
+  () => import("components/Common/SlideNextButton"),
+  { ssr: false }
 );
 const SlidePrevButton = dynamic(
-  () => import("components/Common/SlidePrevButton")
+  () => import("components/Common/SlidePrevButton"),
+  { ssr: false }
 );
 const SpaceInner = dynamic(() => import("components/Common/SpaceInner"));
 
@@ -20,7 +22,7 @@ type PropsType = {
 
 const BlogSwiper: React.FC<PropsType> = ({ array, slidesCount }) => {
   const swiperParams = {
-    autoplay: { 
+    autoplay: {
       delay: 3000,
       disableOnInteraction: false,
     },
@@ -41,21 +43,11 @@ const BlogSwiper: React.FC<PropsType> = ({ array, slidesCount }) => {
       >
         {array.map((item, index) => (
           <SwiperSlide key={index}>
-            <Article
-              image={item.image}
-              date={item.date}
-              description={item.description}
-              title={item.title}
-              bg="#f0f0f4"
-            />
+            <Article {...item} background="#f0f0f4" />
           </SwiperSlide>
         ))}
-        <div className="absolute top-[56%] z-20 right-1">
-          <SlideNextButton />
-        </div>
-        <div className="absolute top-[56%] z-20 left-1">
-          <SlidePrevButton />
-        </div>
+        <SlideNextButton top="56" />
+        <SlidePrevButton top="56" />
       </Swiper>
       <SpaceInner />
     </>

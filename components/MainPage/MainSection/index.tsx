@@ -6,13 +6,14 @@ import {
 } from "helpers/filterArticles";
 import dynamic from "next/dynamic";
 import React from "react";
-const BooksSwiper = dynamic(() => import("components/BookSwiper/BooksSwiper"));
+
+const BooksSwiper = dynamic(() => import("components/BookSwiper"));
 const FeaturedCategoriesSwiper = dynamic(
   () =>
-    import("./MainSection/FeaturedCategoriesSection/FeaturedCategoriesSwiper")
+    import("./../MainSection/FeaturedCategoriesSection/FeaturedCategoriesSwiper")
 );
 const HeroSlideSection = dynamic(
-  () => import("./MainSection/HeroSlideSection/HeroSlideSection")
+  () => import("./HeroSlideSection")
 );
 const MainSection: React.FC = () => {
   const BookSwiperWithTitle = withTitle(BooksSwiper);

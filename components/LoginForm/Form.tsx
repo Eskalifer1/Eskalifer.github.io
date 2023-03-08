@@ -10,7 +10,6 @@ const FormCopmponent = () => {
     password: string;
     rememberMe: boolean;
   };
-
   const submitHandler = (values: FormProps) => {
     console.log(values);
     form.resetFields();
@@ -111,7 +110,6 @@ const FormCopmponent = () => {
               </Checkbox>
             </Form.Item>
           </Form.Item>
-
           <Form.Item>
             <Button
               type="primary"

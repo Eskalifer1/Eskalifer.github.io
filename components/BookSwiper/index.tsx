@@ -6,10 +6,12 @@ import BookSlide from "./BookSlide";
 import dynamic from "next/dynamic";
 
 const SlideNextButton = dynamic(
-  () => import("components/Common/SlideNextButton")
+  () => import("components/Common/SlideNextButton"),
+  { ssr: false }
 );
 const SlidePrevButton = dynamic(
-  () => import("components/Common/SlidePrevButton")
+  () => import("components/Common/SlidePrevButton"),
+  { ssr: false }
 );
 const SpaceInner = dynamic(() => import("components/Common/SpaceInner"));
 
@@ -17,12 +19,14 @@ type PropsType = {
   array: BookType[];
   withButtons?: boolean;
   slidesCount: number;
+  isSticky?: boolean;
 };
 
 const BooksSwiper: React.FC<PropsType> = ({
   array,
   withButtons = false,
   slidesCount,
+  isSticky = false,
 }) => {
   const swiperParams = {
     autoplay: {
@@ -33,7 +37,7 @@ const BooksSwiper: React.FC<PropsType> = ({
     modules: [Navigation, Autoplay],
   };
   return (
-    <>
+    <div className={isSticky ? "sticky top-0" : ""}>
       <Swiper
         {...swiperParams}
         className="mb-4"
@@ -45,27 +49,14 @@ const BooksSwiper: React.FC<PropsType> = ({
       >
         {array.map((item, index) => (
           <SwiperSlide key={index}>
-            <BookSlide
-              img={item.img}
-              helper={item.helper}
-              genre={item.genre}
-              price={item.price}
-              title={item.title}
-              oldPrice={item.oldPrice}
-              stars={item.stars}
-              withButtons={withButtons}
-            />
+            <BookSlide {...item} withButtons={withButtons} />
           </SwiperSlide>
         ))}
-        <div className="absolute top-[56%] z-20 right-1">
-          <SlideNextButton />
-        </div>
-        <div className="absolute top-[56%] z-20 left-1">
-          <SlidePrevButton />
-        </div>
+        <SlideNextButton top="56" />
+        <SlidePrevButton top="56" />
       </Swiper>
       <SpaceInner />
-    </>
+    </div>
   );
 };
 

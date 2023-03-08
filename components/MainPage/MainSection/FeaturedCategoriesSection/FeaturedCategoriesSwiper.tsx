@@ -6,10 +6,12 @@ import { FeaturedCategoriesType } from "types/swipersTypes";
 import FeaturedCategory from "./FeaturedCategory";
 
 const SlideNextButton = dynamic(
-  () => import("components/Common/SlideNextButton")
+  () => import("components/Common/SlideNextButton"),
+  { ssr: false }
 );
 const SlidePrevButton = dynamic(
-  () => import("components/Common/SlidePrevButton")
+  () => import("components/Common/SlidePrevButton"),
+  { ssr: false }
 );
 
 type PropsType = {
@@ -39,15 +41,11 @@ const FeaturedCategoriesSwiper: React.FC<PropsType> = ({
     >
       {array.map((item, index) => (
         <SwiperSlide key={index}>
-          <FeaturedCategory img={item.img} title={item.title} />
+          <FeaturedCategory {...item} />
         </SwiperSlide>
       ))}
-      <div className="absolute top-[56%] z-20 right-1">
-        <SlideNextButton />
-      </div>
-      <div className="absolute top-[56%] z-20 left-1">
-        <SlidePrevButton />
-      </div>
+      <SlideNextButton top="56" />
+      <SlidePrevButton top="56" />
     </Swiper>
   );
 };

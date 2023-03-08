@@ -7,14 +7,14 @@ import { ArticleType } from "types/ArticleType";
 import { articles, filterArticles } from "helpers/filterArticles";
 
 type PropsType = {
-  setMasOfArticles: (mas: ArticleType[]) => void;
+  setArticlesArray: (mas: ArticleType[]) => void;
 };
 type FormProps = {
   search: string;
 };
 
 const SearchForm: React.FC<PropsType> = ({
-  setMasOfArticles
+  setArticlesArray
 }) => {
   const onSubmitFunction = (values: FormProps) => {
     console.log(values);
@@ -32,9 +32,9 @@ const SearchForm: React.FC<PropsType> = ({
   useEffect(() => {
     try {
       if (formik.values.search.length >= 3) {
-        setMasOfArticles(filterArticles(formik.values.search, articles));
+        setArticlesArray(filterArticles(formik.values.search, articles));
       } else {
-        setMasOfArticles(articles);
+        setArticlesArray(articles);
       }
     } catch (e) {
       console.error(e);

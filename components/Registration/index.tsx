@@ -1,15 +1,15 @@
 import dynamic from "next/dynamic";
 import React from "react";
 import RegistrationForm from "./RegistrationForm";
-const ManRegistrationImage = dynamic(
-  () => import("components/Images/BooksImage")
-);
+import registrationImage from "./../../assets/images/registration.jpg"
+
+const HalfPageImage = dynamic(() => import('components/Images/halfPageImage'))
 
 const Registration = () => {
   return (
     <div className="wrap flex">
       <RegistrationForm />
-      <ManRegistrationImage />
+      <HalfPageImage source={registrationImage} alt={"Registration Image"} />
     </div>
   );
 };

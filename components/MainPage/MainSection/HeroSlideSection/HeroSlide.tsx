@@ -3,10 +3,10 @@ import React from "react";
 import { HeroSwiperType } from "types/swipersTypes";
 
 const HeroSlide: React.FC<HeroSwiperType> = ({
-  img,
-  title,
-  subTitle,
-  position,
+  img = "",
+  title = "",
+  subTitle = "",
+  position = "center",
 }) => {
   let titleDivClass: string | undefined;
   position === "left"
@@ -14,11 +14,13 @@ const HeroSlide: React.FC<HeroSwiperType> = ({
     : position === "center"
     ? (titleDivClass = "justify-center items-center text-center")
     : position === "right"
-    ? (titleDivClass = "justify-end items-end text-end") 
+    ? (titleDivClass = "justify-end items-end text-end")
     : (titleDivClass = "justify-start items-start");
-    
+
   return (
-    <div className={`${titleDivClass} relative w-full h-[560px] p-[50px] flex sm:p-8`}>
+    <div
+      className={`${titleDivClass} relative w-full h-[560px] p-[50px] flex sm:p-8`}
+    >
       <Image
         fill
         src={img}

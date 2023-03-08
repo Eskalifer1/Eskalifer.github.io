@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 import React from "react";
-import Navigation from "components/Navigation/Navigation";
-import LoginForm from "components/LoginForm/LoginForm";
+import HeaderComponent from "Layout/HeaderComponent";
+import LoginForm from "components/LoginForm";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-const FooterComponent = dynamic(() => import("components/Footer/FooterComponent"));
+const FooterComponent = dynamic(() => import("Layout/FooterComponent"));
 
 const LoginPage: NextPage = () => {
   return (
@@ -23,7 +23,7 @@ const LoginPage: NextPage = () => {
         <meta name="twitter:image" content="/path/to/image.jpg" />
       </Head>
       <div style={{ backgroundColor: "#D9D6DE" }}>
-        <Navigation isSearchShow={false} />
+        <HeaderComponent isSearchShow={false} />
         <LoginForm />
         <FooterComponent />
       </div>

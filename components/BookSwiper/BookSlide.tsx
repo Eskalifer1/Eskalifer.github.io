@@ -5,14 +5,14 @@ import React from "react";
 import { BookType } from "types/swipersTypes";
 
 const BookSlide: React.FC<BookType & { withButtons: boolean }> = ({
-  img,
-  helper,
-  genre,
-  title,
-  price,
-  oldPrice,
-  stars,
-  withButtons,
+  img = "",
+  helper = "",
+  genre = "",
+  title = "",
+  price = "",
+  oldPrice = "",
+  stars = "",
+  withButtons = false,
 }) => {
   return (
     <div className="font-[Chivo] text-center p-2 flex flex-col h-auto">
@@ -33,7 +33,7 @@ const BookSlide: React.FC<BookType & { withButtons: boolean }> = ({
         </div>
       </Link>
       {genre ? <p className="text-[#0A0A0A] text-sm mb-4">{genre}</p> : ""}
-      <h4 className="font-bold text-base">{title}</h4>
+      <h3 className="font-bold text-base">{title}</h3>
       {stars ? <Rate disabled value={+stars} className="mb-2" /> : ""}
       {oldPrice ? (
         <div className="flex items-center justify-center">

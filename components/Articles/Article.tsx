@@ -8,22 +8,22 @@ type PropsType = {
   date: string;
   title: string;
   description: string;
-  bg: string;
+  background: string;
 };
 
 const Article: React.FC<PropsType> = ({
-  image,
-  date,
-  title,
-  description,
-  bg,
+  image = "",
+  date = "",
+  title = "",
+  description = "",
+  background = "#fff",
 }) => {
   return (
     <Link href={"#"}>
       <Card
         hoverable
         className={`font-[Chivo] text-center`}
-        style={{ backgroundColor: bg }}
+        style={{ backgroundColor: background }}
       >
         <div className="relative w-full mb-2 h-[250px]">
           <Image

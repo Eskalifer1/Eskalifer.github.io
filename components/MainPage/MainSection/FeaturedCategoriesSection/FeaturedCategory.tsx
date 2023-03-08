@@ -7,7 +7,7 @@ type PropsType = {
   title: string;
 };
 
-const FeaturedCategory: React.FC<PropsType> = ({ img, title }) => {
+const FeaturedCategory: React.FC<PropsType> = ({ img = "", title = "" }) => {
   return (
     <div className="font-[Chivo] text-center">
       <div className="relative w-[125px] h-[125px] mb-4 mx-auto">

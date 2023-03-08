@@ -7,13 +7,13 @@ import {
 import dynamic from "next/dynamic";
 import React from "react";
 
-const WeekAuthor = dynamic(() => import("./WeekAuthor/WeekAuthor"));
-const BooksSwiperSticky = dynamic(() => import("components/BookSwiper/BookSwiperSticky"));
+const WeekAuthor = dynamic(() => import("./WeekAuthor"));
+const BooksSwiper = dynamic(() => import("components/BookSwiper"));
 const SpaceInner = dynamic(() => import("components/Common/SpaceInner"));
-const BlogSection = dynamic(() => import("./BlogSection/BlogSection"));
+const BlogSection = dynamic(() => import("./BlogSection"));
 
 const MidPageSection = () => {
-  const BooksSwiperStickywithTitle = withTitle(BooksSwiperSticky);
+  const BooksSwiperStickywithTitle = withTitle(BooksSwiper);
   const WeekAuthorwithTitle = withTitle(WeekAuthor);
   return (
     <>
@@ -32,6 +32,7 @@ const MidPageSection = () => {
             array={newBooksArray}
             slidesCount={4}
             withButtons
+            isSticky
           />
         </div>
       </div>

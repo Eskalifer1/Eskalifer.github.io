@@ -1,14 +1,14 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import Navigation from "components/Navigation/Navigation";
-import MainPage from "components/MainPage/MainPage";
+import HeaderComponent from "Layout/HeaderComponent";
 import Head from "next/head";
+import MainPage from "components/MainPage";
 
 const FooterComponent = dynamic(
-  () => import("components/Footer/FooterComponent")
+  () => import("Layout/FooterComponent")
 );
 const MidPageSection = dynamic(
-  () => import("components/MidPageSection/MidPageSection")
+  () => import("components/MidPageSection")
 );
 
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
         <meta name="twitter:image" content="/path/to/image.jpg" />
       </Head>
       <div>
-        <Navigation isSearchShow />
+        <HeaderComponent isSearchShow />
         <div className="p-[20px]">
           <MainPage />
           <MidPageSection />

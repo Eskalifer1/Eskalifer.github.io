@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import NavigationButtons from "./NavigationButtons";
 import OpusLogo from "components/Common/OpusLogo";
 import NavigationSearch from "./NavigationSearch";
-const Drawer = dynamic(() => import("components/Drawer/Drawer"), {
+const Drawer = dynamic(() => import("components/Drawer"), {
   ssr: false,
 });
 

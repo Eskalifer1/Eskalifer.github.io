@@ -34,7 +34,7 @@ export const MenuItems: MenuItem[] = [
         ]
     },
     { label: (<Item label='Shop' classes={classLink} />), key: '2', children: undefined },
-    { label: (<Item label='Blog' classes={classLink} href='/' />), key: '3', children: undefined },
+    { label: (<Item label='Blog' classes={classLink} href='blog' />), key: '3', children: undefined },
     { label: (<Item label='Cart' classes={classLink} />), key: '4', children: undefined },
     { label: (<Item label='Checkout' classes={classLink} />), key: '5', children: undefined },
     { label: (<Item label='All Book Categories' classes={classLink} />), key: '6', children: undefined },

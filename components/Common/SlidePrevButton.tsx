@@ -1,12 +1,20 @@
 import { LeftCircleFilled } from "@ant-design/icons";
+import React from "react";
 import { useSwiper } from "swiper/react";
 
-export default function SlidePrevButton() {
-  const swiper = useSwiper();
+type PropsType = {
+  top: string;
+};
 
+const SlidePrevButton:React.FC<PropsType> = ({top}) => {
+  const swiper = useSwiper();
+  const buttonStyle = `absolute top-[${top}%] z-20 left-0"`;
   return (
-    <button onClick={() => swiper.slidePrev()}>
-      <LeftCircleFilled className="text-white bg-black text-[27px] rounded-[50%]" />
-    </button>
+    <div className={buttonStyle}>
+      <button onClick={() => swiper.slidePrev()}>
+        <LeftCircleFilled className="text-white bg-black text-[27px] rounded-[50%]" />
+      </button>
+    </div>
   );
 }
+export default SlidePrevButton;

@@ -1,6 +1,6 @@
 import React from "react";
-import MonthFeatured from "./MonthFeatured/MonthFeatured";
-import BestAuthors from "./Swipers/BestAuthors";
+import MonthFeatured from "./MonthFeatured";
+import BestAuthors from "./BestAuthors";
 
 const SideBar = () => {
   return (

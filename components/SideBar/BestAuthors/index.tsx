@@ -3,8 +3,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { BestAuthotsArray } from "helpers/filterArticles";
 import { Autoplay, Navigation } from "swiper";
 import Author from "./Author";
-import SlideNextButton from "components/Common/SlideNextButton";
-import SlidePrevButton from "components/Common/SlidePrevButton";
+import dynamic from "next/dynamic";
+
+const SlideNextButton = dynamic(
+  () => import("components/Common/SlideNextButton"),
+  { ssr: false }
+);
+const SlidePrevButton = dynamic(
+  () => import("components/Common/SlidePrevButton"),
+  { ssr: false }
+);
 
 const BestAuthors: React.FC = () => {
   const swiperParams = {
@@ -35,14 +43,8 @@ const BestAuthors: React.FC = () => {
               <Author name={item.name} img={item.img} />
             </SwiperSlide>
           ))}
-          <div className="visible">
-            <div className="absolute top-[43%] z-20 right-0">
-              <SlideNextButton />
-            </div>
-            <div className="absolute top-[43%] z-20 left-0">
-              <SlidePrevButton />
-            </div>
-          </div>
+          <SlideNextButton top="43" />
+          <SlidePrevButton top="43" />
         </Swiper>
         <button className="w-full bg-[#A6B1E1] rounded font-[Chivo] text-white py-1.5 hover:bg-[#C0B6ED]">
           All Authors

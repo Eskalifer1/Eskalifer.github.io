@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 import React from "react";
-import Navigation from "components/Navigation/Navigation";
-import LostPasswordForm from "components/LostPassword/LostPasswordForm";
+import HeaderComponent from "Layout/HeaderComponent";
+import LostPasswordForm from "components/LostPassword";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-const FooterComponent = dynamic(() => import("components/Footer/FooterComponent"));
+const FooterComponent = dynamic(() => import("Layout/FooterComponent"));
 
 const LostPasswordPage: NextPage = () => {
   return (
@@ -23,7 +23,7 @@ const LostPasswordPage: NextPage = () => {
         <meta name="twitter:image" content="/path/to/image.jpg" />
       </Head>
       <div className="bg-[#D9D6DE]">
-        <Navigation isSearchShow={false} />
+        <HeaderComponent isSearchShow={false} />
         <LostPasswordForm />
         <FooterComponent />
       </div>
