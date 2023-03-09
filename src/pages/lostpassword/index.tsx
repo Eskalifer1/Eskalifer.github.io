@@ -1,11 +1,13 @@
 import { NextPage } from "next";
 import React from "react";
-import HeaderComponent from "Layout/HeaderComponent";
-import LostPasswordForm from "components/LostPassword";
+import LostPassword from "components/LostPassword";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import HeaderComponent from "components/Layout/HeaderComponent";
 
-const FooterComponent = dynamic(() => import("Layout/FooterComponent"));
+const FooterComponent = dynamic(
+  () => import("components/Layout/FooterComponent")
+);
 
 const LostPasswordPage: NextPage = () => {
   return (
@@ -24,7 +26,7 @@ const LostPasswordPage: NextPage = () => {
       </Head>
       <div className="bg-[#D9D6DE]">
         <HeaderComponent isSearchShow={false} />
-        <LostPasswordForm />
+        <LostPassword />
         <FooterComponent />
       </div>
     </>

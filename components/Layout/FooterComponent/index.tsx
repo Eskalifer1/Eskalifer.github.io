@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "@/styles/Footer.module.css";
 import Image from "next/legacy/image";
-import payment from "../../assets/images/payment.png";
 import {
   ArrowUpOutlined,
 } from "@ant-design/icons";
@@ -23,7 +22,7 @@ const FooterComponent: React.FC = () => {
                 <p className="font-[Chivo]">{item.description}</p>
               )}
               {item.image && (
-                <Image src={payment} alt="Payment System" loading="lazy" />
+                <Image src={item.image} alt="Payment System" loading="lazy" />
               )}
             </div>
           ))}

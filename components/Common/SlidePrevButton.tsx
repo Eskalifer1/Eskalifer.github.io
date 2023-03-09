@@ -6,15 +6,14 @@ type PropsType = {
   top: string;
 };
 
-const SlidePrevButton:React.FC<PropsType> = ({top}) => {
+const SlidePrevButton: React.FC<PropsType> = ({ top }) => {
   const swiper = useSwiper();
-  const buttonStyle = `absolute top-[${top}%] z-20 left-0"`;
   return (
-    <div className={buttonStyle}>
+    <div className="absolute z-20 left-0" style={{ top: `${top}%` }}>
       <button onClick={() => swiper.slidePrev()}>
         <LeftCircleFilled className="text-white bg-black text-[27px] rounded-[50%]" />
       </button>
     </div>
   );
-}
+};
 export default SlidePrevButton;

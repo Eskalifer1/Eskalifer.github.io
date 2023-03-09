@@ -1,4 +1,4 @@
-import payment from "../../assets/images/payment.png";
+import payment from "assets/images/payment.png";
 import {
   FacebookFilled,
   InstagramOutlined,

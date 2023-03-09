@@ -1,13 +1,15 @@
-import { Button, ConfigProvider, Divider, Form, Input } from "antd";
 import React from "react";
+import { Button, Checkbox, ConfigProvider, Divider, Form, Input } from "antd";
 import { useFormik } from "formik";
-import LostPassword from "assets/validatioonScheme/LostPassword";
+import loginFormSchema from "assets/validatioonScheme/LoginFormSchema";
+import Link from "next/link";
 
-const FormComponent = () => {
+const LoginForm = () => {
   type FormProps = {
     userName: string;
+    password: string;
+    rememberMe: boolean;
   };
-
   const submitHandler = (values: FormProps) => {
     console.log(values);
     form.resetFields();
@@ -17,9 +19,11 @@ const FormComponent = () => {
   const formik = useFormik({
     initialValues: {
       userName: "",
+      password: "",
+      rememberMe: false,
     },
     onSubmit: submitHandler,
-    validationSchema: LostPassword,
+    validationSchema: loginFormSchema,
   });
   return (
     <div className="m-4 basis-1/2 md:basis-full">
@@ -27,16 +31,13 @@ const FormComponent = () => {
         Login
       </h1>
       <Divider style={{ backgroundColor: "black" }} />
-      <p className="font-[Chivo] mb-4 sm:text-sm">
-        Lost your password? Please enter your username or email address. You
-        will receive a link to create a new password via email.
-      </p>
       <ConfigProvider
         theme={{
           token: {
             colorPrimary: "#000",
             fontFamily: "Chivo",
             colorLinkHover: "#000",
+            colorTextBase: "#7A7A7A",
           },
         }}
       >
@@ -69,14 +70,58 @@ const FormComponent = () => {
               onBlur={formik.handleBlur}
             />
           </Form.Item>
+          <Form.Item
+            name="password"
+            label={"Password"}
+            help={
+              formik.touched.password && formik.errors.password ? (
+                <div>{formik.errors.password}</div>
+              ) : null
+            }
+            validateStatus={
+              formik.touched.password && formik.errors.password
+                ? "error"
+                : "success"
+            }
+          >
+            <Input
+              type="password"
+              placeholder="Password"
+              autoComplete="on"
+              onChange={(value) => {
+                formik.setFieldValue("password", value.target.value);
+              }}
+              value={formik.values.password}
+              onBlur={formik.handleBlur}
+            />
+          </Form.Item>
+          <Form.Item>
+            <Form.Item
+              name="rememberMe"
+              valuePropName="checked"
+              style={{ marginBottom: 15 }}
+            >
+              <Checkbox
+                onChange={(e) =>
+                  formik.setFieldValue("rememberMe", e.target.checked)
+                }
+              >
+                Remember me
+              </Checkbox>
+            </Form.Item>
+          </Form.Item>
           <Form.Item>
             <Button
               type="primary"
               htmlType="submit"
               className="py-4 px-[30px] leading-4 h-auto font-[Chivo] shadow-none bg-black minmd:hover:!text-[#FECE30] minmd:hover:bg-black"
             >
-              Reset Password
+              Log in
             </Button>
+          </Form.Item>
+          <Form.Item>
+            <Link href={"/lostpassword"}>Lost your password? | </Link>
+            <Link href={"/registration"}>Register</Link>
           </Form.Item>
         </Form>
       </ConfigProvider>
@@ -84,4 +129,4 @@ const FormComponent = () => {
   );
 };
 
-export default FormComponent;
+export default LoginForm;

@@ -1,11 +1,13 @@
 import { NextPage } from "next";
 import React from "react";
-import HeaderComponent from "Layout/HeaderComponent";
-import LoginForm from "components/LoginForm";
+import Login from "components/Login";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import HeaderComponent from "components/Layout/HeaderComponent";
 
-const FooterComponent = dynamic(() => import("Layout/FooterComponent"));
+const FooterComponent = dynamic(
+  () => import("components/Layout/FooterComponent")
+);
 
 const LoginPage: NextPage = () => {
   return (
@@ -24,7 +26,7 @@ const LoginPage: NextPage = () => {
       </Head>
       <div style={{ backgroundColor: "#D9D6DE" }}>
         <HeaderComponent isSearchShow={false} />
-        <LoginForm />
+        <Login />
         <FooterComponent />
       </div>
     </>

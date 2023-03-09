@@ -1,11 +1,11 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import HeaderComponent from "Layout/HeaderComponent";
 import Head from "next/head";
 import MainPage from "components/MainPage";
+import HeaderComponent from "components/Layout/HeaderComponent";
 
 const FooterComponent = dynamic(
-  () => import("Layout/FooterComponent")
+  () => import("components/Layout/FooterComponent")
 );
 const MidPageSection = dynamic(
   () => import("components/MidPageSection")

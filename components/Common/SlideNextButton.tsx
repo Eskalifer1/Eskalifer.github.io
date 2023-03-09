@@ -8,9 +8,8 @@ type PropsType = {
 
 const SlideNextButton: React.FC<PropsType> = ({ top }) => {
   const swiper = useSwiper();
-  const buttonStyle = `absolute top-[${top}%] z-20 right-0`
   return (
-    <div className={buttonStyle}>
+    <div className="absolute z-20 right-0" style={{top: `${top}%`}}>
       <button onClick={() => swiper.slideNext()}>
         <RightCircleFilled className="text-white bg-black text-[27px] rounded-[50%]" />
       </button>
