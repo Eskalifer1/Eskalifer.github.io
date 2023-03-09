@@ -1,6 +1,6 @@
-import SideBar from "components/SideBar";
 import React from "react";
 import MainSection from "./MainSection";
+import SideBar from "./SideBar";
 
 const MainPage = () => {
   return (

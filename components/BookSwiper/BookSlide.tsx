@@ -16,9 +16,9 @@ const BookSlide: React.FC<BookType & { withButtons: boolean }> = ({
 }) => {
   return (
     <div className="font-[Chivo] text-center p-2 flex flex-col h-auto">
-      <Link href={"#"}>
-        <div className="relative h-[220px] w-full mx-auto mb-3">
-          <Image src={img} alt="book" fill className="rounded-md" />
+      <Link href={"#"} className="mb-3">
+        <div className="relative h-0 w-full pb-[125%]">
+          <Image src={img} alt="book" fill className="rounded-md"/>
           {helper === "Best Selling" || helper === "Top Rated" ? (
             <p className="absolute top-2 right-1 bg-[#A72DB8] p-1 text-white rounded-md">
               {helper}

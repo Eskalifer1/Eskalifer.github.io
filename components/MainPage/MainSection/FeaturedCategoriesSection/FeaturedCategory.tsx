@@ -10,7 +10,7 @@ type PropsType = {
 const FeaturedCategory: React.FC<PropsType> = ({ img = "", title = "" }) => {
   return (
     <div className="font-[Chivo] text-center">
-      <div className="relative w-[125px] h-[125px] mb-4 mx-auto">
+      <div className="relative w-full h-0 mb-4 pb-[100%]">
         <Link href={"#"}>
           <Image
             src={img}
