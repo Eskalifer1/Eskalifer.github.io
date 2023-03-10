@@ -7,9 +7,7 @@ import HeaderComponent from "components/Layout/HeaderComponent";
 const FooterComponent = dynamic(
   () => import("components/Layout/FooterComponent")
 );
-const MidPageSection = dynamic(
-  () => import("components/MidPageSection")
-);
+const MidPageSection = dynamic(() => import("components/MidPageSection"));
 
 export default function Home() {
   return (
@@ -36,10 +34,12 @@ export default function Home() {
         <meta name="twitter:image" content="/path/to/image.jpg" />
       </Head>
       <div>
-        <HeaderComponent isSearchShow />
-        <div className="p-[20px]">
-          <MainPage />
-          <MidPageSection />
+        <div className="w-full mx-auto" style={{ maxWidth: 1700 }}>
+          <HeaderComponent isSearchShow />
+          <div className="p-[20px]">
+            <MainPage />
+            <MidPageSection />
+          </div>
         </div>
         <FooterComponent />
       </div>

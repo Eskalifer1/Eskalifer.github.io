@@ -12,7 +12,7 @@ const FooterComponent = dynamic(
 const LoginPage: NextPage = () => {
   return (
     <>
-    <Head>
+      <Head>
         <title>Login</title>
         <meta name="description" content="Login Page of Opus-Best" />
         <meta property="og:title" content="Opus-Best Blog Title" />
@@ -25,8 +25,10 @@ const LoginPage: NextPage = () => {
         <meta name="twitter:image" content="/path/to/image.jpg" />
       </Head>
       <div style={{ backgroundColor: "#D9D6DE" }}>
-        <HeaderComponent isSearchShow={false} />
-        <Login />
+        <div className="w-full mx-auto" style={{ maxWidth: 1700 }}>
+          <HeaderComponent isSearchShow={false} />
+          <Login />
+        </div>
         <FooterComponent />
       </div>
     </>

@@ -30,8 +30,10 @@ const RegistrationPage = () => {
         <meta name="twitter:image" content="/path/to/image.jpg" />
       </Head>
       <div style={{ backgroundColor: "#E3F6FD" }}>
-        <HeaderComponent isSearchShow={false} />
-        <Registration />
+        <div className="w-full mx-auto" style={{ maxWidth: 1700 }}>
+          <HeaderComponent isSearchShow={false} />
+          <Registration />
+        </div>
         <FooterComponent />
       </div>
     </>

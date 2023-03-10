@@ -40,9 +40,11 @@ export default function BlogPage() {
         <meta name="twitter:image" content="/path/to/image.jpg" />
       </Head>
       <div style={{ backgroundColor: "#D9E6E3" }}>
-        <HeaderComponent isSearchShow={false} />
-        <SearchForm setArticlesArray={setArticlesArray} />
-        <Articles articlesArray={articlesArray} />
+        <div className="w-full mx-auto" style={{ maxWidth: 1700 }}>
+          <HeaderComponent isSearchShow={false} />
+          <SearchForm setArticlesArray={setArticlesArray} />
+          <Articles articlesArray={articlesArray} />
+        </div>
         <FooterComponent />
       </div>
     </>
