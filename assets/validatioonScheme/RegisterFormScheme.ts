@@ -1,16 +1,17 @@
+import { i18n } from "next-i18next";
 import * as Yup from "yup";
 
 const RegisterFormScheme = Yup.object().shape({
-    userName: Yup.string()
-        .min(2, "Must be longer than 2 characters")
-        .max(40, "Nice try, nobody has a first name that long"),
-    email: Yup.string()
-        .min(2, "Must be longer than 2 characters")
-        .max(40, "Nice try, nobody has a first name that long")
-        .email('Invalid Email Adress')
-        .required('Required'),
-    password: Yup.string()
-        .min(3, "Must be longer than 3 characters")
-        .required("Required")
+  userName: Yup.string()
+    .min(2, i18n?.t("global:FormsValidation:minLength", { length: 2 }) || "")
+    .max(40, i18n?.t("global:FormsValidation:maxLength", { length: 40 }) || ""),
+  email: Yup.string()
+    .min(2, i18n?.t("global:FormsValidation:minLength", { length: 2 }) || "")
+    .max(40, i18n?.t("global:FormsValidation:maxLength", { length: 40 }) || "")
+    .email(i18n?.t("global:FormsValidation:invalidEmail", { length: 40 }) || "")
+    .required(i18n?.t("global:FormsValidation:required") || ""),
+  password: Yup.string()
+    .min(4, i18n?.t("global:FormsValidation:minLength", { length: 4 }) || "")
+    .required(i18n?.t("global:FormsValidation:required") || ""),
 });
 export default RegisterFormScheme;

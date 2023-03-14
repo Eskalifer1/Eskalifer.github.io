@@ -30,7 +30,7 @@ const HeroSlide: React.FC<HeroSwiperType> = ({
         sizes="(min-width: 1023px) 75vw,
                     (max-width: 1023px) 100vw"
       />
-      <div className="font-[Chivo] text-white absolute slide-in">
+      <div className="font-[Chivo] text-white absolute slide-in m-1">
         <h2 className="font-bold text-[35px] mb-5 sm:text-[23px]">{title}</h2>
         <h3 className="text-[17px] sm:text-3">{subTitle}</h3>
       </div>

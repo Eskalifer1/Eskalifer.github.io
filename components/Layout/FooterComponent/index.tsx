@@ -13,8 +13,8 @@ const FooterComponent: React.FC = () => {
     <>
       <footer className="wrap bg-black text-white">
         <div className="grid grid-cols-autofit xl:grid-cols-2 md:grid-cols-1">
-          {footerArray.map((item) => (
-            <div className="p-[10px] mb-5" key={item.title}>
+          {footerArray.map((item, index) => (
+            <div className="p-[10px] mb-5" key={index}>
               <h3 className="text-xl font-[Chivo] font-normal mb-5">
                 {item.title}
               </h3>
@@ -22,7 +22,7 @@ const FooterComponent: React.FC = () => {
                 <p className="font-[Chivo]">{item.description}</p>
               )}
               {item.image && (
-                <Image src={item.image} alt="Payment System" loading="lazy" />
+                <Image src={item.image.src} alt={item.image.alt} loading="lazy" />
               )}
             </div>
           ))}

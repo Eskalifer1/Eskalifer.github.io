@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { ArticleType } from "types/ArticleType";
 import { articles, filterArticles } from "helpers/filterArticles";
+import { useTranslation } from "next-i18next";
 
 type PropsType = {
   setArticlesArray: (mas: ArticleType[]) => void;
@@ -13,9 +14,8 @@ type FormProps = {
   search: string;
 };
 
-const SearchForm: React.FC<PropsType> = ({
-  setArticlesArray
-}) => {
+const SearchForm: React.FC<PropsType> = ({ setArticlesArray }) => {
+  const { t } = useTranslation("global");
   const onSubmitFunction = (values: FormProps) => {
     console.log(values);
   };
@@ -45,7 +45,7 @@ const SearchForm: React.FC<PropsType> = ({
     <div className="wrap">
       <div className="w-full flex items-center justify-between md:block">
         <h2 className="w-1/2 p-4 text-[40px] font-normal font-[Chivo] sm:text-xl ">
-          Articles
+          {t("global:SearchForm:title")}
         </h2>
         <Form
           form={form}
@@ -69,7 +69,7 @@ const SearchForm: React.FC<PropsType> = ({
             }
           >
             <Input
-              placeholder="Search..."
+              placeholder={t("global:SearchForm:placeholder") || "Search..."}
               onChange={(e) => {
                 formik.setFieldValue("search", e.currentTarget.value);
               }}

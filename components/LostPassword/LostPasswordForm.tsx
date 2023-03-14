@@ -2,11 +2,14 @@ import { Button, ConfigProvider, Divider, Form, Input } from "antd";
 import React from "react";
 import { useFormik } from "formik";
 import LostPassword from "assets/validatioonScheme/LostPassword";
+import { useTranslation } from "next-i18next";
 
 const LostPasswordForm = () => {
   type FormProps = {
     userName: string;
   };
+
+  const { t } = useTranslation("global");
 
   const submitHandler = (values: FormProps) => {
     console.log(values);
@@ -24,12 +27,11 @@ const LostPasswordForm = () => {
   return (
     <div className="m-4 basis-1/2 md:basis-full">
       <h1 className="text-[40px] font-[Chivo] md:text-center sm:text-xl">
-        Login
+        {t("global:LostPasswordForm:title")}
       </h1>
       <Divider style={{ backgroundColor: "black" }} />
       <p className="font-[Chivo] mb-4 sm:text-sm">
-        Lost your password? Please enter your username or email address. You
-        will receive a link to create a new password via email.
+        {t("global:LostPasswordForm:description")}
       </p>
       <ConfigProvider
         theme={{
@@ -48,7 +50,7 @@ const LostPasswordForm = () => {
         >
           <Form.Item
             name="userName"
-            label={"Username or Email Address"}
+            label={t("global:LostPasswordForm:userName")}
             help={
               formik.touched.userName && formik.errors.userName ? (
                 <div>{formik.errors.userName}</div>
@@ -61,7 +63,7 @@ const LostPasswordForm = () => {
             }
           >
             <Input
-              placeholder="Username or Email Address"
+              placeholder={t("global:LostPasswordForm:userName") || "UserName"}
               onChange={(value) => {
                 formik.setFieldValue("userName", value.target.value);
               }}
@@ -75,7 +77,7 @@ const LostPasswordForm = () => {
               htmlType="submit"
               className="py-4 px-[30px] leading-4 h-auto font-[Chivo] shadow-none bg-black minmd:hover:!text-[#FECE30] minmd:hover:bg-black"
             >
-              Reset Password
+              {t("global:LostPasswordForm:formButton")}
             </Button>
           </Form.Item>
         </Form>

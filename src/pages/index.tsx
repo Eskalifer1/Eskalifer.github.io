@@ -3,9 +3,11 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import MainPage from "components/MainPage";
 import HeaderComponent from "components/Layout/HeaderComponent";
+import { GetStaticPropsContext } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const FooterComponent = dynamic(
-  () => import("components/Layout/FooterComponent")
+  () => import("components/Layout/FooterComponent"), {ssr: false}
 );
 const MidPageSection = dynamic(() => import("components/MidPageSection"));
 
@@ -36,7 +38,7 @@ export default function Home() {
       <div>
         <div className="w-full mx-auto" style={{ maxWidth: 1700 }}>
           <HeaderComponent isSearchShow />
-          <div className="p-[20px]">
+          <div className="p-5 xs:p-4">
             <MainPage />
             <MidPageSection />
           </div>
@@ -45,4 +47,12 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function getStaticProps({ locale = "en" }: GetStaticPropsContext) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["global"])),
+    },
+  };
 }

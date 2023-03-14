@@ -1,4 +1,5 @@
 import { Rate } from "antd";
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -14,11 +15,12 @@ const BookSlide: React.FC<BookType & { withButtons: boolean }> = ({
   stars = "",
   withButtons = false,
 }) => {
+  const { t } = useTranslation("global");
   return (
     <div className="font-[Chivo] text-center p-2 flex flex-col h-auto">
       <Link href={"#"} className="mb-3">
         <div className="relative h-0 w-full pb-[150%]">
-          <Image src={img} alt="book" fill className="rounded-md"/>
+          <Image src={img} alt="book" fill className="rounded-md" />
           {helper === "Best Selling" || helper === "Top Rated" ? (
             <p className="absolute top-2 right-1 bg-[#A72DB8] p-1 text-white rounded-md">
               {helper}
@@ -47,7 +49,7 @@ const BookSlide: React.FC<BookType & { withButtons: boolean }> = ({
       )}
       {withButtons ? (
         <button className="mt-2 py-[15px] px-[28px] rounded-md leading-4 font-[Chivo] bg-black text-white minmd:hover:text-[#FECE30]">
-          Add to Card
+          {t("global:Swipers:addToCart")}
         </button>
       ) : (
         ""

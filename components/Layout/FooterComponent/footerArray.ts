@@ -5,26 +5,28 @@ import {
   TwitterOutlined,
   YoutubeOutlined,
 } from "@ant-design/icons";
+import { i18n } from "next-i18next";
 
 export const footerArray = [
   {
-    title: "Our Work Is",
-    description:
-      "Designed, crafted and built with WordPress, Elementor and ACF Pro.",
+    title: i18n?.t("global:Footer:FirstBlock:title"),
+    description: i18n?.t("global:Footer:FirstBlock:description"),
   },
   {
-    title: "Contact",
-    description:
-      " Phone: 02.62.87.59636 Email: mail@example.com 35 Rue Michel Ange, LE HAVRE, 76610",
+    title: i18n?.t("global:Footer:SecondBlock:title"),
+    description: i18n?.t("global:Footer:SecondBlock:description"),
   },
   {
-    title: "Secured Payment",
+    title: i18n?.t("global:Footer:ThirdBlock:title"),
     description: "",
-    image: payment,
+    image: {
+      src: payment,
+      alt: "Payment System"
+    },
   },
   {
-    title: "About",
-    description: "All Rights Reserved Designed with ❤️ and 🧠 by RAMSTHEMES",
+    title: i18n?.t("global:Footer:FourthBlock:title"),
+    description: i18n?.t("global:Footer:FourthBlock:description")
   },
 ];
 export const linksArray = [

@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import NavigationButtons from "./NavigationButtons";
 import OpusLogo from "components/Common/OpusLogo";
-import NavigationSearch from "./NavigationSearch";
+
 const Drawer = dynamic(() => import("components/Drawer"), {
   ssr: false,
 });
-
+const NavigationSearch = dynamic(() => import("./NavigationSearch"), {
+  ssr: false,
+});
 type PropsType = {
   isSearchShow: boolean;
 };
@@ -23,7 +25,11 @@ const Navigation: React.FC<PropsType> = ({ isSearchShow }) => {
   };
   return (
     <>
-      <div className={"flex items-center justify-between wrap h-[120px]"}>
+      <div
+        className={
+          "flex items-center justify-between wrap h-[120px] xs:h-[180px] xs:flex-wrap"
+        }
+      >
         <OpusLogo />
         {isSearchShow ? (
           <div className="md:hidden m-4 basis-1/3">

@@ -4,6 +4,7 @@ import { BestAuthotsArray } from "helpers/filterArticles";
 import { Autoplay, Navigation } from "swiper";
 import Author from "./Author";
 import dynamic from "next/dynamic";
+import { useTranslation } from "next-i18next";
 
 const SlideNextButton = dynamic(
   () => import("components/Common/SlideNextButton"),
@@ -15,12 +16,14 @@ const SlidePrevButton = dynamic(
 );
 
 const BestAuthors: React.FC = () => {
+  const { t } = useTranslation("global");
+
   const swiperParams = {
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
     },
-    spaceBetween: 10,
+    spaceBetween: 10, 
     slidesPerView: 2,
     modules: [Navigation, Autoplay],
   };
@@ -28,7 +31,7 @@ const BestAuthors: React.FC = () => {
   return (
     <>
       <div className="p-4 rounded-xl font-[Chivo] bg-[#f4eeff] sticky">
-        <h2 className="font-bold text-2xl mb-5">Best Authors</h2>
+        <h2 className="font-bold text-2xl mb-5">{t("global:SideBar:authorsTitle")}</h2>
         <Swiper
           {...swiperParams}
           className="mb-4"
@@ -47,7 +50,7 @@ const BestAuthors: React.FC = () => {
           <SlidePrevButton top="43" />
         </Swiper>
         <button className="w-full bg-[#A6B1E1] rounded font-[Chivo] text-white py-1.5 hover:bg-[#C0B6ED]">
-          All Authors
+          {t("allAuthorsButton")}
         </button>
       </div>
     </>

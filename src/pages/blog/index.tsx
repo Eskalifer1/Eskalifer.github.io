@@ -5,10 +5,12 @@ import { ArticleType } from "types/ArticleType";
 import { articles } from "helpers/filterArticles";
 import Head from "next/head";
 import HeaderComponent from "components/Layout/HeaderComponent";
+import { GetStaticPropsContext } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const SearchForm = dynamic(() => import("components/SearchForm"));
+const SearchForm = dynamic(() => import("components/SearchForm"), {ssr: false});
 const FooterComponent = dynamic(
-  () => import("components/Layout/FooterComponent")
+  () => import("components/Layout/FooterComponent"), {ssr: false}
 );
 const Articles = dynamic(() => import("components/Articles"));
 
@@ -49,4 +51,12 @@ export default function BlogPage() {
       </div>
     </>
   );
+}
+
+export async function getStaticProps({ locale = "en" }: GetStaticPropsContext) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["global"])),
+    },
+  };
 }

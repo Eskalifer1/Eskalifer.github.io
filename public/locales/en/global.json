@@ -1,0 +1,76 @@
+{
+  "header": {
+    "searchPlaceholder": "Search..."
+  },
+  "SideBar": {
+    "authorsTitle": "Best Authors",
+    "allAuthorsButton": "All Authors",
+    "featuredTitle": "Month`s Featured"
+  },
+  "MainPage": {},
+  "MidPage": {
+    "blogSection": {
+      "blogTitle": "Blog",
+      "blogTitleButton": "All News"
+    }
+  },
+  "LoginForm": {
+    "title": "Login",
+    "userName": "Username or Email Address",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "formButton": "Log in",
+    "lostPassword": "Lost your password? ",
+    "register": "Register"
+  },
+  "LostPasswordForm": {
+    "title": "Login",
+    "description": "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email",
+    "userName": "Username or Email Address",
+    "formButton": "Reset Password"
+  },
+  "SearchForm": {
+    "title": "Articles",
+    "placeholder": "Search..."
+  },
+  "RegistrationForm": {
+    "title": "Register",
+    "userName": "Username",
+    "email": "Email",
+    "password": "Password",
+    "formButton": "Register"
+  },
+  "Swipers": {
+    "addToCart": "Add to Cart"
+  },
+  "Titles": {
+    "newBooks": "New Books",
+    "bestBooks": "Best Books",
+    "novels": "Novels",
+    "featuredCategories": "Featured Categories",
+    "bestAuthor": "Best Author"
+  },
+  "Footer": {
+    "FirstBlock": {
+      "title": "Our Work Is",
+      "description": "Designed, crafted and built with WordPress, Elementor and ACF Pro"
+    },
+    "SecondBlock": {
+      "title": "Contact",
+      "description": "Phone: 02.62.87.59636 Email: mail@example.com 35 Rue Michel Ange, LE HAVRE, 76610"
+    },
+    "ThirdBlock": {
+      "title": "Secured Payment"
+    },
+    "FourthBlock": {
+      "title": "About",
+      "description": "All Rights Reserved Designed with ❤️ and 🧠 by RAMSTHEMES"
+    }
+  },
+  "FormsValidation": {
+    "minLength": "Must be more than {{length}} characters",
+    "maxLength": "Must be more than {{length}} characters",
+    "required": "Required",
+    "invalidEmail": "Invalid Email Adress"
+  }
+}

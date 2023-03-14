@@ -1,10 +1,11 @@
 import "@/styles/globals.css";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/effect-fade"
+import "swiper/css/effect-fade";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { appWithTranslation, i18n } from "next-i18next";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -14,7 +15,7 @@ const queryClient = new QueryClient({
   },
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -26,3 +27,4 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+export default appWithTranslation(App);

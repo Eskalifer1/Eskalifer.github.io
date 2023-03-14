@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
-import LostPasswordForm from './LostPasswordForm';
 import loginImage from "../../assets/images/loginPhoto.png";
 
 const HalfPageImage = dynamic(() => import('components/Images/HalfPageImage'))
+const LostPasswordForm = dynamic(() => import('./LostPasswordForm'), {ssr: false})
 
 const LostPassword = () => {
     return (

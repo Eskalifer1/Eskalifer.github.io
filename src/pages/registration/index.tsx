@@ -1,11 +1,13 @@
 import HeaderComponent from "components/Layout/HeaderComponent";
 import Registration from "components/Registration";
+import { GetStaticPropsContext } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import React from "react";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const FooterComponent = dynamic(
-  () => import("components/Layout/FooterComponent")
+  () => import("components/Layout/FooterComponent"), {ssr: false}
 );
 
 const RegistrationPage = () => {
@@ -38,6 +40,14 @@ const RegistrationPage = () => {
       </div>
     </>
   );
-};
+}; 
 
 export default RegistrationPage;
+
+export async function getStaticProps({ locale = "en" }: GetStaticPropsContext) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["global"])),
+    },
+  };
+}

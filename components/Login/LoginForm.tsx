@@ -3,6 +3,7 @@ import { Button, Checkbox, ConfigProvider, Divider, Form, Input } from "antd";
 import { useFormik } from "formik";
 import loginFormSchema from "assets/validatioonScheme/LoginFormSchema";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 const LoginForm = () => {
   type FormProps = {
@@ -10,6 +11,7 @@ const LoginForm = () => {
     password: string;
     rememberMe: boolean;
   };
+  const { t } = useTranslation("global");
   const submitHandler = (values: FormProps) => {
     console.log(values);
     form.resetFields();
@@ -28,7 +30,7 @@ const LoginForm = () => {
   return (
     <div className="m-4 basis-1/2 md:basis-full">
       <h1 className="text-[40px] font-[Chivo] md:text-center sm:text-xl">
-        Login
+        {t("global:LoginForm:title")}
       </h1>
       <Divider style={{ backgroundColor: "black" }} />
       <ConfigProvider
@@ -49,7 +51,7 @@ const LoginForm = () => {
         >
           <Form.Item
             name="userName"
-            label={"Username or Email Address"}
+            label={t("global:LoginForm:userName")}
             help={
               formik.touched.userName && formik.errors.userName ? (
                 <div>{formik.errors.userName}</div>
@@ -62,7 +64,7 @@ const LoginForm = () => {
             }
           >
             <Input
-              placeholder="Username or Email Address"
+              placeholder={t("global:LoginForm:userName") || "Username"}
               onChange={(value) => {
                 formik.setFieldValue("userName", value.target.value);
               }}
@@ -72,7 +74,7 @@ const LoginForm = () => {
           </Form.Item>
           <Form.Item
             name="password"
-            label={"Password"}
+            label={t("global:LoginForm:password")}
             help={
               formik.touched.password && formik.errors.password ? (
                 <div>{formik.errors.password}</div>
@@ -86,7 +88,7 @@ const LoginForm = () => {
           >
             <Input
               type="password"
-              placeholder="Password"
+              placeholder={t("global:LoginForm:password") || "Password"}
               autoComplete="on"
               onChange={(value) => {
                 formik.setFieldValue("password", value.target.value);
@@ -106,7 +108,7 @@ const LoginForm = () => {
                   formik.setFieldValue("rememberMe", e.target.checked)
                 }
               >
-                Remember me
+                {t("global:LoginForm:rememberMe")}
               </Checkbox>
             </Form.Item>
           </Form.Item>
@@ -116,12 +118,12 @@ const LoginForm = () => {
               htmlType="submit"
               className="py-4 px-[30px] leading-4 h-auto font-[Chivo] shadow-none bg-black minmd:hover:!text-[#FECE30] minmd:hover:bg-black"
             >
-              Log in
+              {t("global:LoginForm:formButton")}
             </Button>
           </Form.Item>
           <Form.Item>
-            <Link href={"/lostpassword"}>Lost your password? | </Link>
-            <Link href={"/registration"}>Register</Link>
+            <Link href={"/lostpassword"}>{t("global:LoginForm:lostPassword")} | </Link>
+            <Link href={"/registration"}>{t("global:LoginForm:register")}</Link>
           </Form.Item>
         </Form>
       </ConfigProvider>

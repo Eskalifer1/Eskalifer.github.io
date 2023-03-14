@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 import React from "react";
-import RegistrationForm from "./RegistrationForm";
 import registrationImage from "./../../assets/images/registration.jpg"
 
 const HalfPageImage = dynamic(() => import('components/Images/HalfPageImage'))
+const RegistrationForm = dynamic(() => import('./RegistrationForm'), {ssr: false})
 
 const Registration = () => {
   return (

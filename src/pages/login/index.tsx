@@ -1,12 +1,13 @@
-import { NextPage } from "next";
+import { GetStaticPropsContext, NextPage } from "next";
 import React from "react";
 import Login from "components/Login";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import HeaderComponent from "components/Layout/HeaderComponent";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const FooterComponent = dynamic(
-  () => import("components/Layout/FooterComponent")
+  () => import("components/Layout/FooterComponent"), {ssr: false}
 );
 
 const LoginPage: NextPage = () => {
@@ -36,3 +37,11 @@ const LoginPage: NextPage = () => {
 };
 
 export default LoginPage;
+
+export async function getStaticProps({ locale = "en" }: GetStaticPropsContext) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["global"])),
+    },
+  };
+}

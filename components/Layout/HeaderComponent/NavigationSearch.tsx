@@ -2,11 +2,14 @@ import { Form, Input } from "antd";
 import SearchPostScheme from "assets/validatioonScheme/SearchPostScheme";
 import { useFormik } from "formik";
 import React from "react";
+import { useTranslation } from "next-i18next";
 
 const NavigationSearch = () => {
   type FormProps = {
     search: string;
   };
+ 
+  const { t } = useTranslation("global");
 
   const submitHandler = (values: FormProps) => {
     console.log(values);
@@ -41,7 +44,7 @@ const NavigationSearch = () => {
         className={"mb-0"}
       >
         <Input
-          placeholder="Search..."
+          placeholder={t("global:header:searchPlaceholder") || ""}
           onChange={(value) => {
             formik.setFieldValue("search", value.target.value);
           }}
