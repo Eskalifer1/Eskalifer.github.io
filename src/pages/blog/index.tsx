@@ -7,10 +7,8 @@ import Head from "next/head";
 import HeaderComponent from "components/Layout/HeaderComponent";
 import { GetStaticPropsContext } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import SearchForm from "components/SearchForm";
 
-const SearchForm = dynamic(() => import("components/SearchForm"), {
-  ssr: false,
-});
 const FooterComponent = dynamic(
   () => import("components/Layout/FooterComponent")
 );

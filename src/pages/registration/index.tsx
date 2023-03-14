@@ -7,7 +7,7 @@ import React from "react";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const FooterComponent = dynamic(
-  () => import("components/Layout/FooterComponent"), {ssr: false}
+  () => import("components/Layout/FooterComponent")
 );
 
 const RegistrationPage = () => {

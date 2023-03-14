@@ -38,7 +38,7 @@
     "userName": "Ім'я користувача",
     "email": "Електронна пошта",
     "password": "Пароль",
-    "formButton": "Зареэструватися"
+    "formButton": "Зареєструватися"
   },
   "Swipers": {
     "addToCart": "Додати до корзини"
@@ -68,8 +68,8 @@
     }
   },
   "FormsValidation": {
-    "minLength": "Довжина має бути більше ніж {{length}}",
-    "maxLength": "Довжина має бути менша ніж {{length}}",
+    "minLength": "Довжина має бути більше ніж 3",
+    "maxLength": "Довжина має бути менша ніж 40",
     "required": "Обов'язкове поле",
     "invalidEmail": "Введіть коректний email"
   }

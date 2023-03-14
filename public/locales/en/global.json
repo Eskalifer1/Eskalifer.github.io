@@ -68,8 +68,8 @@
     }
   },
   "FormsValidation": {
-    "minLength": "Must be more than {{length}} characters",
-    "maxLength": "Must be more than {{length}} characters",
+    "minLength": "Must be more than 3 characters",
+    "maxLength": "Must be more than 40 characters",
     "required": "Required",
     "invalidEmail": "Invalid Email Adress"
   }

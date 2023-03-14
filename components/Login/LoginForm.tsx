@@ -54,7 +54,7 @@ const LoginForm = () => {
             label={t("global:LoginForm:userName")}
             help={
               formik.touched.userName && formik.errors.userName ? (
-                <div>{formik.errors.userName}</div>
+                <div>{t(formik.errors.userName)}</div>
               ) : null
             }
             validateStatus={
@@ -77,7 +77,7 @@ const LoginForm = () => {
             label={t("global:LoginForm:password")}
             help={
               formik.touched.password && formik.errors.password ? (
-                <div>{formik.errors.password}</div>
+                <div>{t(formik.errors.password)}</div>
               ) : null
             }
             validateStatus={

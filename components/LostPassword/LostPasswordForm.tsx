@@ -53,7 +53,7 @@ const LostPasswordForm = () => {
             label={t("global:LostPasswordForm:userName")}
             help={
               formik.touched.userName && formik.errors.userName ? (
-                <div>{formik.errors.userName}</div>
+                <div>{t(formik.errors.userName)}</div>
               ) : null
             }
             validateStatus={

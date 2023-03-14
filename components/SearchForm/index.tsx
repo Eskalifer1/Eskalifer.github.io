@@ -11,7 +11,7 @@ type PropsType = {
   setArticlesArray: (mas: ArticleType[]) => void;
 };
 type FormProps = {
-  search: string;
+  searchInput: string;
 };
 
 const SearchForm: React.FC<PropsType> = ({ setArticlesArray }) => {
@@ -22,7 +22,7 @@ const SearchForm: React.FC<PropsType> = ({ setArticlesArray }) => {
 
   const formik = useFormik({
     initialValues: {
-      search: "",
+      searchInput: "",
     },
     validationSchema: SearchPostScheme,
     onSubmit: onSubmitFunction,
@@ -31,15 +31,15 @@ const SearchForm: React.FC<PropsType> = ({ setArticlesArray }) => {
 
   useEffect(() => {
     try {
-      if (formik.values.search.length >= 3) {
-        setArticlesArray(filterArticles(formik.values.search, articles));
+      if (formik.values.searchInput.length >= 3) {
+        setArticlesArray(filterArticles(formik.values.searchInput, articles));
       } else {
         setArticlesArray(articles);
       }
     } catch (e) {
       console.error(e);
     }
-  }, [formik.values.search]);
+  }, [formik.values.searchInput]);
 
   return (
     <div className="wrap">
@@ -51,19 +51,20 @@ const SearchForm: React.FC<PropsType> = ({ setArticlesArray }) => {
           form={form}
           initialValues={formik.initialValues}
           onFinish={formik.handleSubmit}
+          layout="inline"
           autoComplete="off"
           className="w-1/2 flex items-center justify-center md:w-full "
         >
           <Form.Item
-            name="search"
+            name="searchInput"
             className="w-full"
             help={
-              formik.touched.search && formik.errors.search ? (
-                <div>{formik.errors.search}</div>
+              formik.touched.searchInput && formik.errors.searchInput ? (
+                <div>{t(formik.errors.searchInput)}</div>
               ) : null
             }
             validateStatus={
-              formik.touched.search && formik.errors.search
+              formik.touched.searchInput && formik.errors.searchInput
                 ? "error"
                 : "success"
             }
@@ -71,9 +72,9 @@ const SearchForm: React.FC<PropsType> = ({ setArticlesArray }) => {
             <Input
               placeholder={t("global:SearchForm:placeholder") || "Search..."}
               onChange={(e) => {
-                formik.setFieldValue("search", e.currentTarget.value);
+                formik.setFieldValue("searchInput", e.currentTarget.value);
               }}
-              value={formik.values.search}
+              value={formik.values.searchInput}
               onBlur={formik.handleBlur}
               className="min-h-[15px] w-full"
               prefix={<SearchOutlined className={"text-[#7A7A7A]"} />}

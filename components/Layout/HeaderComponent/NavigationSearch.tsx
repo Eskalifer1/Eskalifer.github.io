@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 
 const NavigationSearch = () => {
   type FormProps = {
-    search: string;
+    searchInput: string;
   };
  
   const { t } = useTranslation("global");
@@ -19,7 +19,7 @@ const NavigationSearch = () => {
   const [form] = Form.useForm();
   const formik = useFormik({
     initialValues: {
-      search: "",
+      searchInput: "",
     },
     onSubmit: submitHandler,
     validationSchema: SearchPostScheme,
@@ -32,23 +32,23 @@ const NavigationSearch = () => {
       layout="vertical"
     >
       <Form.Item
-        name="search"
+        name="searchInput"
         help={
-          formik.touched.search && formik.errors.search ? (
-            <div>{formik.errors.search}</div>
+          formik.touched.searchInput && formik.errors.searchInput ? (
+            <div>{t(formik.errors.searchInput)}</div>
           ) : null
         }
         validateStatus={
-          formik.touched.search && formik.errors.search ? "error" : "success"
+          formik.touched.searchInput && formik.errors.searchInput ? "error" : "success"
         }
         className={"mb-0"}
       >
         <Input
           placeholder={t("global:header:searchPlaceholder") || ""}
           onChange={(value) => {
-            formik.setFieldValue("search", value.target.value);
+            formik.setFieldValue("searchInput", value.target.value);
           }}
-          value={formik.values.search}
+          value={formik.values.searchInput}
           onBlur={formik.handleBlur}
         />
       </Form.Item>

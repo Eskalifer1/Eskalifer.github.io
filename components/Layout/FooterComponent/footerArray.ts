@@ -5,33 +5,28 @@ import {
   TwitterOutlined,
   YoutubeOutlined,
 } from "@ant-design/icons";
-import { i18n } from "next-i18next";
 
 export const footerArray = [
   {
-      title: i18n?.isInitialized ? i18n?.t("global:Footer:FirstBlock:title"): "",
-      description: i18n?.isInitialized ? i18n?.t("global:Footer:FirstBlock:description"): "",
-  }
-  // {
-  //   title: i18n?.isInitialized ? i18n?.t("global:Footer:FirstBlock:title"): "",
-  //   description: i18n?.t("global:Footer:FirstBlock:description"),
-  // },
-  // {
-  //   title: i18n?.t("global:Footer:SecondBlock:title"),
-  //   description: i18n?.t("global:Footer:SecondBlock:description"),
-  // },
-  // {
-  //   title: i18n?.t("global:Footer:ThirdBlock:title"),
-  //   description: "",
-  //   image: {
-  //     src: payment,
-  //     alt: "Payment System"
-  //   },
-  // },
-  // {
-  //   title: i18n?.t("global:Footer:FourthBlock:title"),
-  //   description: i18n?.t("global:Footer:FourthBlock:description")
-  // },
+    title: "global:Footer:FirstBlock:title",
+    description: "global:Footer:FirstBlock:description"
+  },
+  {
+    title: "global:Footer:SecondBlock:title",
+    description: "global:Footer:SecondBlock:description",
+  },
+  {
+    title: "global:Footer:ThirdBlock:title",
+    description: "",
+    image: {
+      src: payment,
+      alt: "Payment System"
+    },
+  },
+  {
+    title: "global:Footer:FourthBlock:title",
+    description: "global:Footer:FourthBlock:description"
+  },
 ];
 export const linksArray = [
   FacebookFilled,
