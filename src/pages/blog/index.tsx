@@ -8,9 +8,11 @@ import HeaderComponent from "components/Layout/HeaderComponent";
 import { GetStaticPropsContext } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const SearchForm = dynamic(() => import("components/SearchForm"), {ssr: false});
+const SearchForm = dynamic(() => import("components/SearchForm"), {
+  ssr: false,
+});
 const FooterComponent = dynamic(
-  () => import("components/Layout/FooterComponent"), {ssr: false}
+  () => import("components/Layout/FooterComponent")
 );
 const Articles = dynamic(() => import("components/Articles"));
 
@@ -44,7 +46,9 @@ export default function BlogPage() {
       <div style={{ backgroundColor: "#D9E6E3" }}>
         <div className="w-full mx-auto" style={{ maxWidth: 1700 }}>
           <HeaderComponent isSearchShow={false} />
-          <SearchForm setArticlesArray={setArticlesArray} />
+          <div className="h-32 md:h-[190px]">
+            <SearchForm setArticlesArray={setArticlesArray} />
+          </div>
           <Articles articlesArray={articlesArray} />
         </div>
         <FooterComponent />

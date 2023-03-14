@@ -7,8 +7,10 @@ import {
 import { ConfigProvider, FloatButton } from "antd";
 import { footerArray } from "./footerArray";
 import FooterLinks from "./FooterLinks";
+import { i18n } from "next-i18next";
 
 const FooterComponent: React.FC = () => {
+  console.log(i18n?.t("global:Footer:FirstBlock:title"))
   return (
     <>
       <footer className="wrap bg-black text-white">
@@ -21,9 +23,9 @@ const FooterComponent: React.FC = () => {
               {item.description && (
                 <p className="font-[Chivo]">{item.description}</p>
               )}
-              {item.image && (
+              {/* {item.image && (
                 <Image src={item.image.src} alt={item.image.alt} loading="lazy" />
-              )}
+              )} */}
             </div>
           ))}
         </div>
