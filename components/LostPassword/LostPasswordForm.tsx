@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Divider, Form, Input } from "antd";
+import { Button, ConfigProvider, Form, Input } from "antd";
 import React from "react";
 import { useFormik } from "formik";
 import LostPassword from "assets/validatioonScheme/LostPassword";
@@ -29,7 +29,7 @@ const LostPasswordForm = () => {
       <h1 className="text-[40px] font-[Chivo] md:text-center sm:text-xl">
         {t("global:LostPasswordForm:title")}
       </h1>
-      <Divider style={{ backgroundColor: "black" }} />
+      <hr className="my-6 border-black"/>
       <p className="font-[Chivo] mb-4 sm:text-sm">
         {t("global:LostPasswordForm:description")}
       </p>

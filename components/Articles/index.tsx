@@ -1,7 +1,6 @@
 import React from "react";
 import Article from "./Article";
 import { ArticleType } from "types/ArticleType";
-import { Divider } from "antd";
 
 type PropsType = {
   articlesArray: ArticleType[] | undefined;

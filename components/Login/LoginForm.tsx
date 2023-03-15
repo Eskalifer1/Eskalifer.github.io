@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Checkbox, ConfigProvider, Divider, Form, Input } from "antd";
+import { Button, Checkbox, ConfigProvider, Form, Input } from "antd";
 import { useFormik } from "formik";
 import loginFormSchema from "assets/validatioonScheme/LoginFormSchema";
 import Link from "next/link";
@@ -32,7 +32,7 @@ const LoginForm = () => {
       <h1 className="text-[40px] font-[Chivo] md:text-center sm:text-xl">
         {t("global:LoginForm:title")}
       </h1>
-      <Divider style={{ backgroundColor: "black" }} />
+      <hr className="my-6 border-black"/>
       <ConfigProvider
         theme={{
           token: {

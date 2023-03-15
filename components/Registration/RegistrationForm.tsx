@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ConfigProvider, Divider, Form, Input } from "antd";
+import { Button, ConfigProvider, Form, Input } from "antd";
 import { useFormik } from "formik";
 import RegisterFormScheme from "assets/validatioonScheme/RegisterFormScheme";
 import { useTranslation } from "next-i18next";
@@ -33,7 +33,7 @@ const RegistrationForm = () => {
       <h1 className="text-[40px] font-[Chivo] md:text-center sm:text-xl">
         {t("global:RegistrationForm:title")}
       </h1>
-      <Divider style={{ backgroundColor: "black" }} />
+      <hr className="my-6 border-black"/>
       <ConfigProvider
         theme={{
           token: {
