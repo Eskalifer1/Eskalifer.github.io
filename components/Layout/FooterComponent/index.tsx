@@ -17,9 +17,9 @@ const FooterComponent: React.FC = () => {
         <div className="grid grid-cols-autofit xl:grid-cols-2 md:grid-cols-1">
           {footerArray.map((item, index) => (
             <div className="p-[10px] mb-5" key={index}>
-              <h3 className="text-xl font-[Chivo] font-normal mb-5">
+              <h2 className="text-xl font-[Chivo] font-normal mb-5">
                 {t(item.title)}
-              </h3>
+              </h2>
               {item.description && (
                 <p className="font-[Chivo]">{t(item.description)}</p>
               )}
