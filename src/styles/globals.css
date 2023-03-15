@@ -66,3 +66,6 @@ button {
   animation-duration: 2s;
   animation-timing-function: ease-out;
 }
+.staticHeight{
+  @apply h-32 md:h-[190px]
+}

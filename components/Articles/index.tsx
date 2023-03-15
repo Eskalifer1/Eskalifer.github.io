@@ -10,7 +10,7 @@ type PropsType = {
 const Articles: React.FC<PropsType> = ({ articlesArray }) => {
   return (
     <div className="wrap">
-      <Divider className="my-10 bg-black" />
+      <hr className="my-10 border-black"/>
       <div className="grid gap-5 mb-5 grid-cols-[repeat(5,_minmax(150px,_1fr))] md:grid-cols-1 xl:grid-cols-[repeat(2,_minmax(330px,_1fr))]">
         {articlesArray &&
           articlesArray.map((item, index) => (

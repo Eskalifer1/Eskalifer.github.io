@@ -44,7 +44,7 @@ export default function BlogPage() {
       <div style={{ backgroundColor: "#D9E6E3" }}>
         <div className="w-full mx-auto" style={{ maxWidth: 1700 }}>
           <HeaderComponent isSearchShow={false} />
-          <div className="h-32 md:h-[190px]">
+          <div className="staticHeight">
             <SearchForm setArticlesArray={setArticlesArray} />
           </div>
           <Articles articlesArray={articlesArray} />
